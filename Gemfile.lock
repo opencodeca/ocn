@@ -81,6 +81,9 @@ GEM
     multi_json (1.8.2)
     multipart-post (1.2.0)
     mysql2 (0.3.13)
+    parole (0.1.2)
+      activerecord (>= 4.0.0)
+      activesupport (>= 4.0.0)
     pg (0.17.0)
     polyglot (0.3.3)
     quiet_assets (1.0.2)
@@ -175,6 +178,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   mysql2
+  parole
   pg
   quiet_assets
   rack-canonical-host

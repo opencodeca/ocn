@@ -81,6 +81,9 @@ gem 'unicorn'
 # Use hanzo for deployment
 gem 'hanzo'
 
+# Use parole to handle comments on a link
+gem 'parole'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
