@@ -25,7 +25,7 @@ gem 'foreman'
 gem 'dotenv-rails'
 
 # Use Sentry to log errors
-gem 'sentry-raven'
+gem 'sentry-raven', require: false
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
