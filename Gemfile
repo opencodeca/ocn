@@ -9,6 +9,12 @@ gem 'pg'
 # Use mysql2 for now, my laptop is not ready for pg
 gem 'mysql2'
 
+# Use haml for view templating
+gem 'haml'
+
+# Remove asset lines from STDOUT
+gem 'quiet_assets', :group => :development
+
 # Use choices for custom rails settings
 gem 'choices'
 
