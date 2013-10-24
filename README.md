@@ -27,6 +27,9 @@ CANONICAL_HOST=0.0.0.0
 
 # Sentry
 SENTRY_DSN=
+
+# Database URL to use in non-development environment (remove otherwise)
+DATABASE_URL=
 ```
 
 # Run tests
