@@ -28,3 +28,10 @@ CANONICAL_HOST=0.0.0.0
 # Sentry
 SENTRY_DSN=
 ```
+
+# Run tests
+
+```
+# Run the test suite
+$ bundle exec rspec
+```
