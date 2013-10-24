@@ -6,6 +6,9 @@ gem 'rails', '4.0.0'
 # Use pg as the database for Active Record
 gem 'pg'
 
+# Use mysql2 for now, my laptop is not ready for pg
+gem 'mysql2'
+
 # Use choices for custom rails settings
 gem 'choices'
 
