@@ -50,6 +50,22 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+  # Use RSpec for tests
+  gem 'rspec-rails'
+
+  # Use FactoryGirl instead of fixtures
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  # Use Faker for random data
+  gem 'faker'
+
+  # Cleanup database during tests
+  gem 'database_cleaner'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
