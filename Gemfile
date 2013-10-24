@@ -6,6 +6,9 @@ gem 'rails', '4.0.0'
 # Use pg as the database for Active Record
 gem 'pg'
 
+# Use choices for custom rails settings
+gem 'choices'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

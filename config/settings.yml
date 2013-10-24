@@ -1,0 +1,18 @@
+defaults: &defaults
+  domain: <%= ENV['CANONICAL_HOST'] %>
+  protocol: <%= ENV['CANONICAL_PROTOCOL'] || 'http://' %>
+  port: <%= ENV['RACK_ENV'] == 'development' ? ENV['CANONICAL_PORT'] : nil %>
+  sentry:
+    dsn: <%= ENV['SENTRY_DSN'] %>
+
+development:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
