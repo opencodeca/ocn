@@ -27,6 +27,9 @@ gem 'dotenv-rails'
 # Use Sentry to log errors
 gem 'sentry-raven', require: false
 
+# Use Rack::CanonicalHost
+gem 'rack-canonical-host'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
