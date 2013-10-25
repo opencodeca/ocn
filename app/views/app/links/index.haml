@@ -1,3 +1,18 @@
-%ol
+%ol.main
   - @links.each do |link|
-    %li= "#{link.title} (#{link.comments_count})"
+    %li
+      .link
+        %a{href: '#'}= link.title
+        .domain= 'opencode.ca'
+      .meta
+        .points
+          %i.fa.fa-heart-o
+          23
+        .comments
+          %i.fa.fa-comment-o
+          = t('links.comments.count', count: link.comments_count)
+        .submitter
+          |
+          %span
+            Soumis par
+            %a{href: '#'}= 'garno'
