@@ -8,4 +8,8 @@
 
   %link{href: '//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css', rel: 'stylesheet' }
 
-= yield
+%body
+  %p.notice= notice
+  %p.alert= alert
+
+  = yield
