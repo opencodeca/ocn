@@ -87,6 +87,9 @@ gem 'parole'
 # Use emotions to handle feelings on a link
 gem 'emotions'
 
+# Use Devise to handle users
+gem 'devise'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
