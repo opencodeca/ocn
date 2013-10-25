@@ -84,6 +84,9 @@ gem 'hanzo'
 # Use parole to handle comments on a link
 gem 'parole'
 
+# Use emotions to handle feelings on a link
+gem 'emotions'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 

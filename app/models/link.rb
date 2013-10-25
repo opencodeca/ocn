@@ -3,4 +3,7 @@ class Link < ActiveRecord::Base
 
   # Use Parole
   acts_as_commentable
+
+  # Use Emotions
+  acts_as_emotive
 end
