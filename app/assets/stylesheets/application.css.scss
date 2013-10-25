@@ -47,6 +47,13 @@ ol.main {
   }
 
   .link {
+    .actions {
+      float: left;
+      .up {
+        padding-top: 7px;
+      }
+    }
+
     a {
       float: left;
       margin-right: 10px;

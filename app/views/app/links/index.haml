@@ -3,7 +3,9 @@
     %li
       .link
         %a{href: '#'}= link.title
-        .domain= 'opencode.ca'
+        .actions
+          %i.up.fa.fa-sort-up
+        .domain= link.url.split('/')[2]
       .meta
         .points
           %i.fa.fa-heart-o
