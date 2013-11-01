@@ -1,4 +1,4 @@
-class Link < ActiveRecord::Base
+class Post < ActiveRecord::Base
   scope :newest, lambda { |count=10| order('created_at DESC').limit(count) }
 
   # Use Parole

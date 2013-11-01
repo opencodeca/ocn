@@ -2,9 +2,9 @@
   - @links.each do |link|
     %li
       .link
-        %a{href: '#'}= link.title
-        .actions
-          %i.up.fa.fa-sort-up
+        %a{href: link.url}= link.title
+        - # .actions
+        - #   %i.up.fa.fa-sort-up
         .domain= link.url.split('/')[2]
       .meta
         .points
