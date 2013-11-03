@@ -13,7 +13,9 @@ $ cp .env.default .env
 $ bundle exec foreman start
 ```
 
-# Environment variables
+For development purpose, you can run `bundle exec rake hn:import` to populate `Post`. It will import the Hacker News frontpage.
+
+## Environment variables
 
 ```
 # The environment for Rails to use
@@ -37,7 +39,7 @@ GITHUB_CLIENT_ID=
 GITHUB_CLIENT_SECRET=
 ```
 
-# Run tests
+## Run tests
 
 ```
 # Run the test suite

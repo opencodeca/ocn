@@ -37,6 +37,9 @@ gem 'foreman'
 # Use dotenv to use environment variables
 gem 'dotenv-rails'
 
+# Use Unirest to explore the web
+gem 'unirest'
+
 # Use Sentry to log errors
 gem 'sentry-raven', require: false
 
