@@ -1,20 +1,18 @@
 %ol.main
-  - @links.each do |link|
+  - @posts.each do |post|
     %li
-      .link
-        %a{href: link.url}= link.title
-        - # .actions
-        - #   %i.up.fa.fa-sort-up
-        .domain= link.url.split('/')[2]
+      .post
+        %a{href: post.url}= post.title
+        .domain= post.url.split('/')[2]
       .meta
         .points
           %i.fa.fa-heart-o
-          = link.like_emotions_count
+          = post.like_emotions_count
         .comments
           %i.fa.fa-comment-o
-          = t('links.comments.count', count: link.comments_count)
+          = t('posts.comments.count', count: post.comments_count)
         .submitter
           |
           %span
             Soumis par
-            %a{href: '#'}= 'garno'
+            %a{href: '#'}= post.user.username

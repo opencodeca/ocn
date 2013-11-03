@@ -4,12 +4,12 @@ module App
     # GET /
     # GET /posts
     def index
-      @links = Post.newest(10)
+      @posts = Post.newest(10)
     end
 
     # GET /posts/newest
     def newest
-      @links = Post.newest(10)
+      @posts = Post.newest(10)
     end
 
   end

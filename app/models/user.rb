@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
   acts_as_emotional
 
   include ::GithubConnectReady
+
+  # Associations
+  has_many :posts
 end
