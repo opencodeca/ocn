@@ -12,5 +12,9 @@
   %p.notice= notice
   %p.alert= alert
 
-  = link_to "Sign in with GitHub", user_omniauth_authorize_path(:github)
+  - if user_signed_in?
+    = link_to "Logout", logout_path
+  - else
+    = link_to "Sign in with GitHub", user_omniauth_authorize_path(:github)
+
   = yield
