@@ -5,14 +5,10 @@
         %a{href: post.url}= post.title
         .domain= post.url.split('/')[2]
       .meta
-        .points
-          %i.fa.fa-heart-o
-          = post.like_emotions_count
-        .comments
-          %i.fa.fa-comment-o
-          = t('posts.comments.count', count: post.comments_count)
-        .submitter
-          |
-          %span
-            Soumis par
-            %a{href: '#'}= post.user.username
+        = "#{t('posts.points.count', count: post.like_emotions_count)}"
+        = "et #{t('posts.comments.count', count: post.comments_count)}"
+        |
+        Soumis par
+        %a{href: '#'}= post.user.username
+        , il y a 
+        = time_ago_in_words(post.created_at)
