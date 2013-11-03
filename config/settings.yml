@@ -4,6 +4,9 @@ defaults: &defaults
   port: <%= ENV['RACK_ENV'] == 'development' ? ENV['CANONICAL_PORT'] : nil %>
   sentry:
     dsn: <%= ENV['SENTRY_DSN'] %>
+  github:
+    client_id: <%= ENV['GITHUB_CLIENT_ID'] %>
+    client_secret: <%= ENV['GITHUB_CLIENT_SECRET'] %>
 
 development:
   <<: *defaults

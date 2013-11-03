@@ -4,7 +4,7 @@ require "omniauth-github"
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   # Use GitHub for authentication
-  config.omniauth :github, '3a0c10316b72c49f066d', '97e4f1188f8570162c478f4b3cb3a99ccdbd6569'
+  config.omniauth :github, Rails.configuration.github.client_id, Rails.configuration.github.client_secret
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
