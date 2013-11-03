@@ -11,10 +11,11 @@ Ocnews::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'app/posts#index'
 
-  get  '/posts/:id' => 'app/posts#show', as: :posts_show
   get  '/posts/newest' => 'app/posts#newest'
   get  '/posts/new' => 'app/posts#new'
   post '/posts/new' => 'app/posts#create'
+
+  get  '/posts/:id' => 'app/posts#show', as: :posts_show
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
