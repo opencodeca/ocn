@@ -1,5 +1,6 @@
 module App
   class PostsController < AppController
+    before_action :fetch_post, only: [:show]
 
     # GET /
     # GET /posts
@@ -31,7 +32,17 @@ module App
       end
     end
 
+    # GET /posts/:id
+    def show
+    end
+
   private
+
+    def fetch_post
+      @post = Post.find_by_id(params[:id])
+
+      redirect_to root_path unless @post
+    end
 
     def post_params
       permitted_parameters = [:title, :url, :description]
