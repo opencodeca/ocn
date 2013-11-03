@@ -12,4 +12,5 @@
   %p.notice= notice
   %p.alert= alert
 
+  = link_to "Sign in with GitHub", user_omniauth_authorize_path(:github)
   = yield

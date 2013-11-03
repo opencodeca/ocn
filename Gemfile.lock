@@ -73,6 +73,7 @@ GEM
     hashie (2.0.5)
     highline (1.6.20)
     hike (1.2.3)
+    httpauth (0.2.0)
     i18n (0.6.5)
     jbuilder (1.5.2)
       activesupport (>= 3.0.0)
@@ -81,6 +82,8 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    jwt (0.1.8)
+      multi_json (>= 1.5)
     kgio (2.8.1)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -90,6 +93,21 @@ GEM
     multi_json (1.8.2)
     multipart-post (1.2.0)
     mysql2 (0.3.13)
+    oauth2 (0.8.1)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-github (1.1.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
     orm_adapter (0.4.0)
     parole (0.1.2)
       activerecord (>= 4.0.0)
@@ -192,6 +210,8 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   mysql2
+  omniauth
+  omniauth-github
   parole
   pg
   quiet_assets

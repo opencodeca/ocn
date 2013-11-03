@@ -12,6 +12,10 @@ gem 'mysql2'
 # Use haml for view templating
 gem 'haml'
 
+# Use github for login
+gem 'omniauth'
+gem 'omniauth-github'
+
 # Remove asset lines from STDOUT
 gem 'quiet_assets', :group => :development
 
