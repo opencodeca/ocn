@@ -4,7 +4,7 @@ module App
     # GET /
     # GET /posts
     def index
-      @posts = Post.newest(10)
+      @posts = Post.popular(10)
     end
 
     # GET /posts/newest
