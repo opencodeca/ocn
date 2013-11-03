@@ -7,5 +7,10 @@ module App
       @links = Post.newest(10)
     end
 
+    # GET /posts/newest
+    def newest
+      @links = Post.newest(10)
+    end
+
   end
 end
