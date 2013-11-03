@@ -25,11 +25,16 @@ PORT=3000
 # The canonical hostname for the application
 CANONICAL_HOST=0.0.0.0
 
-# Sentry
+# Sentry (optional)
 SENTRY_DSN=
 
 # Database URL to use in non-development environment (remove otherwise)
 DATABASE_URL=
+
+# GitHub client infos
+# Create your application at https://github.com/settings/applications
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
 ```
 
 # Run tests
