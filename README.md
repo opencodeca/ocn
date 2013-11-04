@@ -46,5 +46,5 @@ GITHUB_CLIENT_SECRET=
 
 ```
 # Run the test suite
-$ bundle exec rspec
+$ bundle exec rake spec
 ```
