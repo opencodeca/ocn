@@ -10,6 +10,6 @@
         = link_to t('posts.comments.count', count: post.comments_count), posts_show_path(post)
         |
         Soumis par
-        %a{href: '#'}= post.user.username
-        , il y a 
+        = link_to post.user.username, users_show_path(post.user.username)
+        , il y a
         = time_ago_in_words(post.created_at)

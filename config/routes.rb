@@ -12,4 +12,6 @@ Ocnews::Application.routes.draw do
   post '/posts' => 'app/posts#create'
 
   get  '/posts/:id' => 'app/posts#show', as: :posts_show
+
+  get  '/users/:username' => 'app/users#show', as: :users_show
 end
