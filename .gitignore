@@ -17,3 +17,6 @@
 
 # Ignore user environment
 .env
+
+# Ignore annoying files
+.DS_Store
