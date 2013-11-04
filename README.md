@@ -9,6 +9,9 @@ $ bundle install
 # Copy the environment file to your local machine
 $ cp .env.default .env
 
+# Create and bootstrap the database
+$ bundle exec rake db:setup
+
 # Run the application processes
 $ bundle exec foreman start
 ```
