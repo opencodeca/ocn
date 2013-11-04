@@ -31,4 +31,11 @@ Ocnews::Application.configure do
   config.action_mailer.default_url_options = {
     :host => "#{Rails.configuration.protocol}#{Rails.configuration.domain}#{Rails.configuration.port}"
   }
+
+  # Log on stdout
+  development_logger = Logger.new(STDOUT)
+  development_logger.formatter = lambda do |severity, datetime, progname, msg|
+    "#{datetime}: #{msg}\n"
+  end
+  config.logger = development_logger
 end
