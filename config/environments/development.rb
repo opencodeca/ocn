@@ -33,9 +33,9 @@ Ocnews::Application.configure do
   }
 
   # Log on stdout
-  development_logger = Logger.new(STDOUT)
-  development_logger.formatter = lambda do |severity, datetime, progname, msg|
-    "#{datetime}: #{msg}\n"
+  config.logger = Logger.new(STDOUT).tap do |logger|
+    logger.formatter = lambda do |severity, datetime, progname, msg|
+      "#{datetime}: #{msg}\n"
+    end
   end
-  config.logger = development_logger
 end
