@@ -4,15 +4,13 @@ module App
 
     # GET /
     # GET /posts
-    def index
+    def popular
       @posts = Post.popular(10)
     end
 
     # GET /posts/newest
     def newest
       @posts = Post.newest(10)
-
-      render :index
     end
 
     # GET /posts/new

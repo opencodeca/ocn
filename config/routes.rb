@@ -5,11 +5,11 @@ Ocnews::Application.routes.draw do
     get "/logout" => "devise/sessions#destroy"
   end
 
-  root 'app/posts#index'
+  root 'app/posts#popular'
 
   get  '/posts/newest' => 'app/posts#newest'
   get  '/posts/new' => 'app/posts#new'
-  post '/posts/new' => 'app/posts#create'
+  post '/posts' => 'app/posts#create'
 
   get  '/posts/:id' => 'app/posts#show', as: :posts_show
 end

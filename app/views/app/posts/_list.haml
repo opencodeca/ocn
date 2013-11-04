@@ -1,7 +1,7 @@
-%ol.main
+%ol.posts-list
   - @posts.each do |post|
-    %li
-      .post
+    %li.post
+      .link
         %a{href: post.url}= post.title
         .domain= post.url.split('/')[2]
       .meta

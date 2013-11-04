@@ -1,4 +1,6 @@
-= form_tag '', method: :post do
+- content_for :current_section, :submit
+
+= form_tag posts_path, method: :post do
   = label_tag 'post[url]', 'URL'
   = text_field_tag 'post[url]'
 

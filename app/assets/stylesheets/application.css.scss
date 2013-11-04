@@ -18,3 +18,33 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+body {
+  padding: 20px;
+}
+
+.posts-list {
+  li {
+    margin-bottom: 20px;
+  }
+}
+
+.post {
+  .link {
+    a {
+      float: left;
+      margin-right: 10px;
+    }
+
+    .domain {
+      font-size: 85%;
+
+      &:before { content: '('; }
+      &:after { content: ')'; }
+    }
+  }
+
+  .meta {
+    font-size: 90%;
+  }
+}
