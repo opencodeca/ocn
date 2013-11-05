@@ -19,6 +19,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
+  shared:
+    nav:
+      popular: Populaire
+      newest: Récent
+      submit: Soumettre
+      logout: Quitter
   posts:
     points:
       count:
