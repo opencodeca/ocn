@@ -1,5 +1,10 @@
-- if notice
-  %p.alert.alert-success= notice
-
-- if alert
-  %p.alert.alert-error= alert
+<% if notice %>
+  <p class="alert alert-success">
+    <%= notice %>
+  </p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-error">
+    <%= alert %>
+  </p>
+<% end %>

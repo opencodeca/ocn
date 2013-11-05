@@ -1,19 +1,20 @@
-!!!
-%html
-%head
-  %title Ocnews
-  = stylesheet_link_tag    'application', media: 'all'
-  = javascript_include_tag 'application'
-  = csrf_meta_tags
-
-  %link{href: '//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css', rel: 'stylesheet' }
-
-%body
-  .row
-    .span12
-      = render partial: 'shared/nav'
-      = render partial: 'shared/notices'
-
-      = yield
-
-      = render partial: 'shared/footer'
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>Ocnews</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet"></link>
+</head>
+<body>
+  <div class="row">
+    <div class="span12">
+      <%= render partial: 'shared/nav' %>
+      <%= render partial: 'shared/notices' %>
+      <%= yield %>
+      <%= render partial: 'shared/footer' %>
+    </div>
+  </div>
+</body>
+</html>

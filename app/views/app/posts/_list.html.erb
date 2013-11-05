@@ -1,15 +1,24 @@
-%ol.posts-list
-  - @posts.each do |post|
-    %li.post
-      .link
-        %a{href: post.url}= post.title
-        .domain= post.url.split('/')[2]
-      .meta
-        = "#{t('posts.points.count', count: post.like_emotions_count)}"
+<ol class="posts-list">
+  <% @posts.each do |post| %>
+    <li class="post">
+      <div class="link">
+        <a href="<%= post.url %>">
+          <%= post.title %>
+        </a>
+        <div class="domain">
+          <%= post.url.split('/')[2] %>
+        </div>
+      </div>
+      <div class="meta">
+        <%= "#{t('posts.points.count', count: post.like_emotions_count)}" %>
         et
-        = link_to t('posts.comments.count', count: post.comments_count), posts_show_path(post)
+        <%= link_to t('posts.comments.count', count: post.comments_count), posts_show_path(post) %>
         |
         Soumis par
-        = link_to post.user.username, users_show_path(post.user.username)
+        <%= link_to post.user.username, users_show_path(post.user.username) %>
         , il y a
-        = time_ago_in_words(post.created_at)
+        <%= time_ago_in_words(post.created_at) %>
+      </div>
+    </li>
+  <% end %>
+</ol>
