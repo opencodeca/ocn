@@ -9,9 +9,6 @@ gem 'pg'
 # Use mysql2 for now, my laptop is not ready for pg
 gem 'mysql2'
 
-# Use haml for view templating
-gem 'haml'
-
 # Use github for login
 gem 'omniauth'
 gem 'omniauth-github'
