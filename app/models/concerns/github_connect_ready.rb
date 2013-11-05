@@ -10,8 +10,7 @@ module GithubConnectReady
           name: auth.extra.raw_info.name,
           username: auth.extra.raw_info.login,
           provider: auth.provider,
-          uid: auth.uid,
-          password: Devise.friendly_token[0,20]
+          uid: auth.uid
         }
         attr.merge! email: auth.info.email if auth.info.email.present?
 
