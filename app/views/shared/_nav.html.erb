@@ -2,9 +2,7 @@
   <% if user_signed_in? %>
     <div class="profile pull-right">
       <%= link_to current_user.username, users_show_path(current_user.username) %>
-      <div class="score">
-        <%= '100' %>
-      </div>
+      <div class="score"><%= '100' %></div>
     </div>
   <% end %>
   <ul class="nav nav-pills">
@@ -16,15 +14,10 @@
     </li>
     <% if user_signed_in? %>
       <li class="<%= navigation_class(:submit) %>">
-        <%= link_to t('.submit'), posts_new_path %>
-      </li>
-      <li>
-        <%= link_to t('.logout'), logout_path %>
-      </li>
+        <%= link_to t('.submit'), posts_new_path %></li>
+      <li><%= link_to t('.logout'), logout_path %> </li>
     <% else %>
-      <li>
-        <%= link_to t('.signin'), user_omniauth_authorize_path(:github) %>
-      </li>
+      <li><%= link_to t('.signin'), user_omniauth_authorize_path(:github) %></li>
     <% end %>
   </ul>
 </nav>
