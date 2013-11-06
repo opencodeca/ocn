@@ -7,11 +7,11 @@ Ocnews::Application.routes.draw do
 
   root 'app/posts#popular'
 
-  get  '/posts/newest', to: 'app/posts#newest'
-  get  '/posts/new', to: 'app/posts#new'
-  post '/posts', to: 'app/posts#create'
+  namespace :app, path: '' do
+    resources :posts, only: [:show, :new, :create] do
+      get 'newest', on: :collection, as: 'newest'
+    end
 
-  get  '/posts/:id', to: 'app/posts#show', as: :posts_show
-
-  get  '/users/:username', to: 'app/users#show', as: :users_show
+    resources :users, only: [:show]
+  end
 end

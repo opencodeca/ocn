@@ -9,8 +9,7 @@ module App
   protected
 
     def fetch_user
-      @user = User.find_by_username(params[:username])
-      redirect_to root_url unless @user
+      @user = User.where(username: params[:id]).first!
     end
 
   end
