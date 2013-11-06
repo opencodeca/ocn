@@ -6,6 +6,11 @@ module App
     def show
     end
 
+    # GET /users
+    def index
+      @users = User.all
+    end
+
   protected
 
     def fetch_user

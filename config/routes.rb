@@ -12,6 +12,6 @@ Ocnews::Application.routes.draw do
       get 'newest', on: :collection, as: 'newest'
     end
 
-    resources :users, only: [:show]
+    resources :users, only: [:show, :index]
   end
 end

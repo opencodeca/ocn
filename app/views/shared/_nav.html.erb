@@ -13,12 +13,22 @@
     <li class="<%= navigation_class(:popular) %>">
       <%= link_to t('.popular'), root_path %>
     </li>
+
     <li class="<%= navigation_class(:newest) %>">
       <%= link_to t('.newest'), newest_app_posts_path %>
     </li>
+
     <% if user_signed_in? %>
       <li class="<%= navigation_class(:submit) %>">
-        <%= link_to t('.submit'), new_app_post_path %></li>
+        <%= link_to t('.submit'), new_app_post_path %>
+      </li>
+    <% end %>
+
+    <li class="<%= navigation_class(:users) %>">
+      <%= link_to t('.users'), app_users_path %>
+    </li>
+
+    <% if user_signed_in? %>
       <li><%= link_to t('.logout'), logout_path %> </li>
     <% else %>
       <li><%= link_to t('.signin'), user_omniauth_authorize_path(:github) %></li>

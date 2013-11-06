@@ -9,4 +9,9 @@ class User < ActiveRecord::Base
 
   # Associations
   has_many :posts
+
+  # Fake :id for path/url helpers, eg. app_user_path(user)
+  def to_param
+    username
+  end
 end

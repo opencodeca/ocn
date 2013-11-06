@@ -1,0 +1,9 @@
+<% content_for :current_section, :users %>
+
+<ul>
+  <% present @users do |user| %>
+    <li>
+      <%= link_to(user.username, app_user_path(user)) %>
+    </li>
+  <% end %>
+</ul>
