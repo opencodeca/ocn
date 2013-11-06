@@ -71,6 +71,8 @@ GEM
       thor (>= 0.13.6)
     friendly_id (5.0.1)
       activerecord (~> 4.0.0)
+    gaffe (0.2.1)
+      rails (>= 3.2.0)
     hanzo (0.3)
       highline (>= 1.6.19)
     hashie (2.0.5)
@@ -211,6 +213,7 @@ DEPENDENCIES
   faker
   foreman
   friendly_id (>= 5.0.1)
+  gaffe
   hanzo
   jquery-rails
   jquery-turbolinks

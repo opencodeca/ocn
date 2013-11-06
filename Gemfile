@@ -56,6 +56,9 @@ gem 'friendly_id', '>= 5.0.1'
 # Use presenters because they're cool
 gem 'bourgeois', '>= 0.1.5'
 
+# Use gaffe to handle error pages
+gem 'gaffe'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
