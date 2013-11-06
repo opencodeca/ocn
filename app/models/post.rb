@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  include ExternalMetadata
+
   # Use Parole
   acts_as_commentable
 
