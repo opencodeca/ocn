@@ -4,20 +4,21 @@
       <% if current_user.gravatar_id %>
         <%= image_tag "https://www.gravatar.com/avatar/#{current_user.gravatar_id}", width: 16, height: 16 %>
       <% end %>
-      <%= link_to current_user.username, users_show_path(current_user.username) %>
+      <%= link_to current_user.username, app_user_path(current_user.username) %>
       <div class="score"><%= '100' %></div>
     </div>
   <% end %>
+
   <ul class="nav nav-pills">
     <li class="<%= navigation_class(:popular) %>">
       <%= link_to t('.popular'), root_path %>
     </li>
     <li class="<%= navigation_class(:newest) %>">
-      <%= link_to t('.newest'), posts_newest_path %>
+      <%= link_to t('.newest'), newest_app_posts_path %>
     </li>
     <% if user_signed_in? %>
       <li class="<%= navigation_class(:submit) %>">
-        <%= link_to t('.submit'), posts_new_path %></li>
+        <%= link_to t('.submit'), new_app_post_path %></li>
       <li><%= link_to t('.logout'), logout_path %> </li>
     <% else %>
       <li><%= link_to t('.signin'), user_omniauth_authorize_path(:github) %></li>
