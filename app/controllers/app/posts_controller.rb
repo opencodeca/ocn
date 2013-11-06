@@ -45,6 +45,5 @@ module App
       permitted_parameters = [:title, :url, :description]
       params.require(:post).permit(*permitted_parameters)
     end
-
   end
 end

@@ -11,6 +11,5 @@ module App
     def fetch_user
       @user = User.where(username: params[:id]).first!
     end
-
   end
 end

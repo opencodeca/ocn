@@ -8,7 +8,6 @@ Bundler.require(:default, Rails.env)
 
 module Ocnews
   class Application < Rails::Application
-
     # Load settings in config/settings.yml
     config.from_file 'settings.yml'
 
@@ -28,6 +27,5 @@ module Ocnews
     if Rails.configuration.domain
       config.middleware.use Rack::CanonicalHost, Rails.configuration.domain
     end
-
   end
 end

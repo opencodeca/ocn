@@ -1,6 +1,5 @@
 module App
   class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
     def github
       @user = User.find_for_github_oauth(request.env["omniauth.auth"], current_user)
 
@@ -12,6 +11,5 @@ module App
         redirect_to new_user_registration_url
       end
     end
-
   end
 end
