@@ -11,7 +11,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 
 # Remove asset lines from STDOUT
-gem 'quiet_assets', :group => :development
+gem 'quiet_assets', group: :development
 
 # Use choices for custom rails settings
 gem 'choices'

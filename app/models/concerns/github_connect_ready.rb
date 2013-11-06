@@ -3,7 +3,7 @@ module GithubConnectReady
 
   module ClassMethods
     def find_for_github_oauth(auth, signed_in_resource=nil)
-      obj = where(:provider => auth.provider, :uid => auth.uid).first
+      obj = where(provider: auth.provider, uid: auth.uid).first
 
       unless obj
         attr = {

@@ -29,7 +29,7 @@ Ocnews::Application.configure do
 
   # Mailer
   config.action_mailer.default_url_options = {
-    :host => "#{Rails.configuration.protocol}#{Rails.configuration.domain}#{Rails.configuration.port}"
+    host: "#{Rails.configuration.protocol}#{Rails.configuration.domain}#{Rails.configuration.port}"
   }
 
   # Log on stdout
