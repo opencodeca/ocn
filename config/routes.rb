@@ -13,6 +13,5 @@ Ocnews::Application.routes.draw do
     end
 
     resources :users, only: [:show]
-    resources :comments, only: [:show, :new, :create]
   end
 end
