@@ -1,4 +1,4 @@
-<ol class="posts-list">
+<ol start="<%= @posts.offset_value + 1 %>" class="posts-list">
   <% @posts.each do |post| %>
     <%= render partial: 'mini', locals: { post: post } %>
   <% end %>
