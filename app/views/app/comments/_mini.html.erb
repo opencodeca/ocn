@@ -1,0 +1,12 @@
+<li class="comment">
+  <% present comment do |comment| %>
+    <div class="meta">
+      <%= comment.author_link %>
+      , il y a
+      <%= time_ago_in_words(comment.created_at) %>
+    </div>
+    <div class="body">
+      <%= simple_format(comment.comment) %>
+    </div>
+  <% end %>
+</li>

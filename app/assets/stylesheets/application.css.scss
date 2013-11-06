@@ -23,7 +23,7 @@ body {
   padding: 20px;
 }
 
-.posts-list {
+.posts-list, .comments-list {
   li {
     margin-bottom: 20px;
   }
@@ -46,5 +46,11 @@ body {
 
   .meta {
     font-size: 90%;
+  }
+}
+
+.comment {
+  .meta {
+    margin-bottom: 10px;
   }
 }

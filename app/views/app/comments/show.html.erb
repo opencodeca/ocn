@@ -1,7 +1,7 @@
-<% content_for :current_section, :post %>
+<% content_for :current_section, :comment %>
 
-<% present @post do |post| %>
-  <ul class="posts-list">
+<% present @comment do |comment| %>
+  <ol class="comments-list">
     <%= render partial: 'mini', locals: { post: @post } %>
   </ul>
 

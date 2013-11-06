@@ -6,7 +6,7 @@ module GithubConnectReady
       where(provider: auth.provider, uid: auth.uid).first_or_create({
         name: auth.extra.raw_info.name,
         username: auth.extra.raw_info.login,
-        email: auth.info.email,
+        email: auth.info.email.presence || '',
         provider: auth.provider,
         uid: auth.uid,
         gravatar_id: auth.extra.raw_info.gravatar_id
