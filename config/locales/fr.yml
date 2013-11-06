@@ -16,7 +16,19 @@ fr:
           zero: 'aucun commentaire'
           one: '1 commentaire'
           other: '%{count} commentaires'
-
+  activerecord:
+    models:
+      post: 'Article'
+      user: 'Utilisateur'
+    attributes:
+      post:
+        url: 'URL'
+        title: 'Titre'
+        description: 'Description'
+      user:
+        email: 'Courriel'
+        username: 'Nom d’utilisateur'
+        name: 'Nom'
   datetime:
     distance_in_words:
       about_x_hours:
