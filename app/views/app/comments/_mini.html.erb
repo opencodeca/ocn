@@ -6,7 +6,7 @@
       <%= time_ago_in_words(comment.created_at) %>
     </div>
     <div class="body">
-      <%= comment.comment %>
+      <%= simple_format(comment.comment) %>
     </div>
   <% end %>
 </li>
