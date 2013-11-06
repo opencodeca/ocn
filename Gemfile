@@ -105,4 +105,10 @@ gem 'devise'
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
+
+# Use better_errors for nicer rails error page
+gem 'better_errors', group: [:development]
+
+# Use binding_of_caller for rails live web debugging with better_errors
+gem 'binding_of_caller', group: [:development]
