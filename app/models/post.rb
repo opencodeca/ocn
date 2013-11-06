@@ -18,6 +18,6 @@ class Post < ActiveRecord::Base
   validates_with PostValidator
 
   # Scopes
-  scope :newest, lambda { |count=10| order('created_at DESC').limit(count) }
-  scope :popular, lambda { |count=10| select('*, (comments_count + like_emotions_count) AS score').order('score DESC').limit(count) }
+  scope :newest, lambda { order('created_at DESC') }
+  scope :popular, lambda { select('*, (comments_count + like_emotions_count) AS score').order('score DESC') }
 end
