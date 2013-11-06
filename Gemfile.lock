@@ -109,7 +109,6 @@ GEM
     parole (0.1.2)
       activerecord (>= 4.0.0)
       activesupport (>= 4.0.0)
-    pg (0.17.0)
     polyglot (0.3.3)
     puma (2.0.1)
       rack (>= 1.1, < 2.0)
@@ -212,7 +211,6 @@ DEPENDENCIES
   omniauth
   omniauth-github
   parole
-  pg
   puma
   quiet_assets
   rack-canonical-host

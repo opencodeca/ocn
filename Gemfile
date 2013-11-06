@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use pg as the database for Active Record
-gem 'pg'
-
 # Use mysql2 for now, my laptop is not ready for pg
 gem 'mysql2'
 
