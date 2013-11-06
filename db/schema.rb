@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106011727) do
+ActiveRecord::Schema.define(version: 20131106012342) do
 
   create_table "comments", force: true do |t|
     t.integer  "commentable_id"
@@ -41,6 +41,19 @@ ActiveRecord::Schema.define(version: 20131106011727) do
   add_index "emotions", ["emotional_type", "emotional_id", "emotive_type", "emotive_id"], name: "index_emotions_by_emotional_and_emotive", using: :btree
   add_index "emotions", ["emotive_type", "emotive_id", "emotion"], name: "index_emotions_by_emotive", using: :btree
 
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "url"
@@ -50,7 +63,10 @@ ActiveRecord::Schema.define(version: 20131106011727) do
     t.integer  "comments_count",      default: 0
     t.integer  "like_emotions_count", default: 0
     t.integer  "user_id"
+    t.string   "slug"
   end
+
+  add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

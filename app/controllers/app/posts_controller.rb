@@ -37,9 +37,7 @@ module App
   private
 
     def fetch_post
-      @post = Post.find_by_id(params[:id])
-
-      redirect_to root_path unless @post
+      @post = Post.friendly.find(params[:id])
     end
 
     def post_params
