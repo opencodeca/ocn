@@ -1,5 +1,9 @@
-<ol class="posts-list">
+<ol start="<%= @posts.offset_value + 1 %>" class="posts-list">
   <% @posts.each do |post| %>
     <%= render partial: 'mini', locals: { post: post } %>
   <% end %>
 </ol>
+
+<% unless @posts.last_page? %>
+  <p><%= link_to_next_page(@posts, 'Plus de ragout') %></p>
+<% end %>
