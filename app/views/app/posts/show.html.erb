@@ -1,4 +1,11 @@
 <% content_for :current_section, :post %>
 
 <% present @post do |post| %>
+  <ul class="posts-list">
+    <%= render partial: 'mini', locals: { post: @post } %>
+  </ul>
+
+  <%= render partial: 'app/comments/form', locals: { commentable: @post } %>
+
+  <%= render partial: 'app/comments/list', locals: { comments: @post.comments } %>
 <% end %>

@@ -1,0 +1,12 @@
+<% content_for :current_section, :comment %>
+
+<% present @comment do |comment| %>
+  <ol class="comments-list">
+    <%= render partial: 'mini', locals: { post: @post } %>
+  </ul>
+
+  <%= render partial: 'app/comments/form', locals: { commentable: @post } %>
+
+  <%= render partial: 'app/comments/list', locals: { comments: @comments } %>
+<% end %>
+

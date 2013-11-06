@@ -1,0 +1,12 @@
+<li class="comment">
+  <% present comment do |comment| %>
+    <div class="meta">
+      <%= link_to comment.commenter.username, app_user_path(comment.commenter.username) %>
+      , il y a
+      <%= time_ago_in_words(comment.created_at) %>
+    </div>
+    <div class="body">
+      <%= comment.comment %>
+    </div>
+  <% end %>
+</li>

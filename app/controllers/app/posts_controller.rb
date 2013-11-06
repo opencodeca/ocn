@@ -32,6 +32,7 @@ module App
 
     # GET /posts/:id
     def show
+      @comments = @post.comments.popular
     end
 
   private
