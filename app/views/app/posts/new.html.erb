@@ -1,10 +1,24 @@
 <% content_for :current_section, :submit %>
-<%= form_tag posts_path, method: :post do %>
-  <%= label_tag 'post[url]', 'URL' %>
-  <%= text_field_tag 'post[url]' %>
-  <%= label_tag 'post[title]', 'Title' %>
-  <%= text_field_tag 'post[title]' %>
-  <%= label_tag 'post[description]', 'Description' %>
-  <%= text_area_tag 'post[description]' %>
-  <%= submit_tag ('Submit') %>
+
+<%= form_for @post do |f| %>
+  <ul>
+    <li>
+      <%= f.label :url %>
+      <%= f.url_field :url %>
+    </li>
+
+    <li>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </li>
+
+    <li>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </li>
+
+    <li>
+      <%= submit_tag %>
+    </li>
+  </ul>
 <% end %>
