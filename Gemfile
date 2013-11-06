@@ -52,7 +52,7 @@ gem 'jquery-turbolinks'
 
 # Use FriendlyId to generate clean URLs
 gem 'friendly_id', '>= 5.0.1'
-=======
+
 # Use presenters because they're cool
 gem 'bourgeois', '>= 0.1.5'
 
