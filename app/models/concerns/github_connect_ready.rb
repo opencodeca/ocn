@@ -3,21 +3,14 @@ module GithubConnectReady
 
   module ClassMethods
     def find_for_github_oauth(auth, signed_in_resource=nil)
-      obj = where(provider: auth.provider, uid: auth.uid).first
-
-      unless obj
-        attr = {
-          name: auth.extra.raw_info.name,
-          username: auth.extra.raw_info.login,
-          provider: auth.provider,
-          uid: auth.uid
-        }
-        attr.merge! email: auth.info.email if auth.info.email.present?
-
-        obj = create(attr)
-      end
-
-      obj
+      where(provider: auth.provider, uid: auth.uid).first_or_create({
+        name: auth.extra.raw_info.name,
+        username: auth.extra.raw_info.login,
+        email: auth.info.email,
+        provider: auth.provider,
+        uid: auth.uid,
+        gravatar_id: auth.extra.raw_info.gravatar_id
+      })
     end
   end
 
