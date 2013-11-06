@@ -5,6 +5,10 @@ class Post < ActiveRecord::Base
   # Use Emotions
   acts_as_emotive
 
+  # Use FriendlyId
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   # Associations
   belongs_to :user
 
