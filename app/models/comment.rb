@@ -4,5 +4,6 @@ class Comment < ActiveRecord::Base
   acts_as_comment
 
   # Scopes
-  scope :popular, lambda { |count=10| order('created_at DESC').limit(count) }
+  # TODO: Devrait être modifier pour être un ordre plus clever.
+  scope :popular, lambda { |count=10| order('created_at ASC').limit(count) }
 end
