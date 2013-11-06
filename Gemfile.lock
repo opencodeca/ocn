@@ -29,6 +29,9 @@ GEM
     arel (4.0.1)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
+    bourgeois (0.1.5)
+      actionpack (>= 3.0.0)
+      activemodel (>= 3.0.0)
     builder (3.1.4)
     choices (0.3.2)
       hashie (>= 0.4.0)
@@ -194,6 +197,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourgeois (>= 0.1.5)
   choices
   coffee-rails (~> 4.0.0)
   database_cleaner

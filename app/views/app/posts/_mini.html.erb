@@ -1,17 +1,19 @@
 <li class="post">
-  <div class="link">
-    <%= link_to post.title, post.url %>
-    <div class="domain"><%= post.url.split('/')[2] %></div>
-  </div>
+  <% present post do |post| %>
+    <div class="link">
+      <%= link_to post.title, post.url %>
+      <div class="domain"><%= post.url.split('/')[2] %></div>
+    </div>
 
-  <div class="meta">
-    <%= t('.points_count', count: post.like_emotions_count) %>
-    et
-    <%= link_to t('.comments_count', count: post.comments_count), posts_show_path(post) %>
-    |
-    Soumis par
-    <%= link_to post.user.username, users_show_path(post.user.username) %>
-    , il y a
-    <%= time_ago_in_words(post.created_at) %>
-  </div>
+    <div class="meta">
+      <%= t('.points_count', count: post.like_emotions_count) %>
+      et
+      <%= link_to t('.comments_count', count: post.comments_count), posts_show_path(post) %>
+      |
+      Soumis par
+      <%= link_to post.user.username, users_show_path(post.user.username) %>
+      , il y a
+      <%= time_ago_in_words(post.created_at) %>
+    </div>
+  <% end %>
 </li>
