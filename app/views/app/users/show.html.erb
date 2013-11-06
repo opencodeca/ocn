@@ -5,7 +5,8 @@
     <tr>
       <th>user:</th>
       <td>
-        <%= link_to(user.username, user.github_profile_url %>
+        <%= user.name %>
+        (<%= link_to(user.username, user.github_profile_url) %>)
       </td>
     </tr>
     <tr>
