@@ -1,5 +1,10 @@
 <% content_for :current_section, :submit %>
-<%= form_for @post do |f| %>
+<%= form_for @post, url: app_posts_path do |f| %>
+  <% if @post.errors %>
+    <%# Ideally, we would have an render_error_messages(@post) helper %>
+    <%= @post.errors.full_messages %>
+  <% end %>
+
   <ul>
     <li>
       <%= f.label :url %>
