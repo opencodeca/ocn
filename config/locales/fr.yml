@@ -4,7 +4,7 @@ fr:
       popular: Populaire
       newest: Récent
       submit: Soumettre
-      logout: Quitter
+      logout: Déconnexion
   app:
     posts:
       mini:
