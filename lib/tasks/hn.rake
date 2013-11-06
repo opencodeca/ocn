@@ -5,17 +5,14 @@ namespace :hn do
     result = Unirest.get 'http://api.ihackernews.com/page'
     user = User.first
 
-    abort("""
-      Can't import news, there is no user!
-
-      Your must first create a user first by logging in via Github.
-    """) unless user
+    unless user
+      abort "Can't import news, there is no user! Your must first create a user first by logging in via Github."
+    end
 
     result.body['items'].each do |post|
-      Post.create({
+      user.posts.create({
         title: post['title'],
-        url: post['url'],
-        user_id: user.id
+        url: post['url']
       })
     end
   end
