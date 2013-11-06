@@ -2,18 +2,14 @@
   <% present post do |post| %>
     <div class="link">
       <%= link_to post.title, post.url %>
-      <div class="domain"><%= post.url.split('/')[2] %></div>
+      <span class="domain"><%= post.domain %></span>
     </div>
 
     <div class="meta">
-      <%= t('.points_count', count: post.like_emotions_count) %>
-      et
-      <%= link_to t('.comments_count', count: post.comments_count), app_post_path(post) %>
-      |
-      Soumis par
-      <%= link_to post.user.username, app_user_path(post.user.username) %>
-      , il y a
-      <%= time_ago_in_words(post.created_at) %>
+      <span class="points-count"><%= post.points_count %></span>
+      <span class="comments-count"><%= post.comments_count %></span>
+      <span class="author-link"><%= post.author_link %></span>
+      <span class="timestamp"><%= time_ago_in_words(post.created_at) %></span>
     </div>
   <% end %>
 </li>
