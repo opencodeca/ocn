@@ -5,12 +5,12 @@ module App
     # GET /
     # GET /posts
     def popular
-      @posts = Post.popular(10)
+      @posts = Post.popular.page(params[:page])
     end
 
     # GET /posts/newest
     def newest
-      @posts = Post.newest(10)
+      @posts = Post.newest.page(params[:page])
     end
 
     # GET /posts/new
