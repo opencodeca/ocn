@@ -10,9 +10,6 @@ gem 'mysql2'
 gem 'omniauth'
 gem 'omniauth-github'
 
-# Remove asset lines from STDOUT
-gem 'quiet_assets', group: :development
-
 # Use choices for custom rails settings
 gem 'choices'
 
@@ -39,9 +36,6 @@ gem 'sentry-raven', require: false
 
 # Use Rack::CanonicalHost
 gem 'rack-canonical-host'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -73,6 +67,20 @@ group :development, :test do
 
   # Use FactoryGirl instead of fixtures
   gem 'factory_girl_rails'
+
+  # Use debugger to debug, duh.
+  gem 'debugger', group: [:development, :test]
+end
+
+group :development do
+  # Use better_errors for nicer rails error page
+  gem 'better_errors', group: [:development]
+
+  # Use binding_of_caller for rails live web debugging with better_errors
+  gem 'binding_of_caller', group: [:development]
+
+  # Remove asset lines from STDOUT
+  gem 'quiet_assets', group: :development
 end
 
 group :test do
@@ -82,9 +90,6 @@ group :test do
   # Cleanup database during tests
   gem 'database_cleaner'
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use puma as the app server
 gem 'puma'
@@ -100,15 +105,3 @@ gem 'emotions'
 
 # Use Devise to handle users
 gem 'devise'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-gem 'debugger', group: [:development, :test]
-
-# Use better_errors for nicer rails error page
-gem 'better_errors', group: [:development]
-
-# Use binding_of_caller for rails live web debugging with better_errors
-gem 'binding_of_caller', group: [:development]
