@@ -1,5 +1,6 @@
 defaults: &defaults
-  adapter: mysql2
+  adapter: postgresql
+  host: 127.0.0.1
   pool: 5
   timeout: 5000
 
