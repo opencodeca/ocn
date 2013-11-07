@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   include ExternalMetadata
+  include PostPopularSorting
 
   # Use Parole
   acts_as_commentable
@@ -21,5 +22,4 @@ class Post < ActiveRecord::Base
 
   # Scopes
   scope :newest, lambda { order('created_at DESC') }
-  scope :popular, lambda { select('*, (comments_count + like_emotions_count) AS score').order('score DESC') }
 end
