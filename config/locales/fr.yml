@@ -6,6 +6,7 @@ fr:
       submit: Soumettre
       users: Utilisateurs
       logout: Déconnexion
+      login: Connexion via GitHub
   app:
     posts:
       mini:

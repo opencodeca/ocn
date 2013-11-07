@@ -31,7 +31,7 @@
     <% if user_signed_in? %>
       <li><%= link_to t('.logout'), logout_path %> </li>
     <% else %>
-      <li><%= link_to t('.signin'), user_omniauth_authorize_path(:github) %></li>
+      <li><%= link_to t('.login'), user_omniauth_authorize_path(:github) %></li>
     <% end %>
   </ul>
 </nav>
