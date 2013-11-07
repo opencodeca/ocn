@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
@@ -96,6 +97,7 @@ gem 'puma'
 
 # Use hanzo for deployment
 gem 'hanzo'
+gem 'rails_12factor'
 
 # Use parole to handle comments on a link
 gem 'parole'
