@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.1'
 
 # Use PostgreSQL
-gem 'mysql2'
+gem 'pg'
 
 # Use github for login
 gem 'omniauth'
