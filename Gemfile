@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
-# Use mysql2 for now, my laptop is not ready for pg
+# Use PostgreSQL
 gem 'mysql2'
 
 # Use github for login
@@ -105,3 +105,6 @@ gem 'emotions'
 
 # Use Devise to handle users
 gem 'devise'
+
+# Use Pismo to fetch URLs metadata
+gem 'pismo'
