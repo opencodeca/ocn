@@ -97,6 +97,7 @@ gem 'puma'
 
 # Use hanzo for deployment
 gem 'hanzo'
+gem 'rails_12factor'
 
 # Use parole to handle comments on a link
 gem 'parole'
