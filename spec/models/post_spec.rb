@@ -2,6 +2,18 @@ require 'spec_helper'
 
 describe Post do
 
+  describe :Factories do
+    context "Valid factory" do
+      subject { create(:post) }
+      specify { should be_valid }
+    end
+
+    context "Invalid factory" do
+      subject { build(:invalid_post) }
+      specify { should_not be_valid }
+    end
+  end
+
   describe :metadata do
     subject { Post.new }
     let(:valid_document) do
