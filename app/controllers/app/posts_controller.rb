@@ -24,7 +24,7 @@ module App
       @post.assign_attributes(post_params)
 
       if @post.save
-        redirect_to posts_newest_path, notice: t('.notice')
+        redirect_to newest_app_posts_path, notice: t('.notice')
       else
         render :new
       end
