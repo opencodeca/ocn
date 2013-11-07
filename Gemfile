@@ -85,8 +85,8 @@ group :development do
 end
 
 group :test do
-  # Use Faker for random data
-  gem 'faker'
+  # Use FFaker for (faster) random data
+  gem 'ffaker'
 
   # Cleanup database during tests
   gem 'database_cleaner'

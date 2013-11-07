@@ -78,11 +78,10 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
-    faker (1.2.0)
-      i18n (~> 0.5)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     fast-stemmer (1.0.2)
+    ffaker (1.20.0)
     foreman (0.63.0)
       dotenv (>= 0.7)
       thor (>= 0.13.6)
@@ -249,7 +248,7 @@ DEPENDENCIES
   dotenv-rails
   emotions
   factory_girl_rails
-  faker
+  ffaker
   foreman
   friendly_id (>= 5.0.1)
   gaffe
