@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106023835) do
+ActiveRecord::Schema.define(version: 20131106042932) do
 
   create_table "comments", force: true do |t|
     t.integer  "commentable_id"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20131106023835) do
     t.integer  "like_emotions_count", default: 0
     t.integer  "user_id"
     t.string   "slug"
+    t.text     "metadata"
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
