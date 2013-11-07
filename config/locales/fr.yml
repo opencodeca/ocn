@@ -4,6 +4,7 @@ fr:
       popular: Populaire
       newest: Récent
       submit: Soumettre
+      users: Utilisateurs
       logout: Déconnexion
   app:
     posts:
