@@ -6,6 +6,6 @@ class CommentPresenter < Bourgeois::Presenter
 
   # Return the localized score
   def points_count
-    view.t('.points_count', count: like_about.count)
+    view.t('.points_count', count: like_emotions_count)
   end
 end
