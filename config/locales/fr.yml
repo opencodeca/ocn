@@ -18,6 +18,12 @@ fr:
           zero: 'aucun commentaire'
           one: '1 commentaire'
           other: '%{count} commentaires'
+    comments:
+      mini:
+        points_count:
+          zero: '0 point'
+          one: '1 point'
+          other: '%{count} points'
   activerecord:
     models:
       post: 'Article'

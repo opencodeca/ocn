@@ -1,9 +1,11 @@
 <li class="comment">
   <% present comment do |comment| %>
     <div class="meta">
+      <%= link_to '▲', like_app_comment_path(comment), method: :post %>
       <%= comment.author_link %>
       , il y a
       <%= time_ago_in_words(comment.created_at) %>
+      - <%= comment.points_count %>
     </div>
     <div class="body">
       <%= simple_format(comment.comment) %>

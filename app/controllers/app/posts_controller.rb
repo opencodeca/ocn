@@ -1,6 +1,6 @@
 module App
   class PostsController < AppController
-    before_action :fetch_post, only: [:show]
+    before_action :fetch_post, only: [:show, :like]
 
     # GET /
     # GET /posts
@@ -33,6 +33,12 @@ module App
     # GET /posts/:id
     def show
       @comments = @post.comments.popular
+    end
+
+    # POST /posts/:id/like
+    def like
+      current_user.express!(:like, @post)
+      redirect_to :back
     end
 
   private

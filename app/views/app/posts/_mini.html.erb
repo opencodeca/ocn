@@ -1,6 +1,7 @@
 <li class="post">
   <% present post do |post| %>
     <div class="link">
+      <%= link_to '▲', like_app_post_path(post), method: :post %>
       <%= link_to post.title, post.url %>
       <span class="domain"><%= post.domain %></span>
     </div>

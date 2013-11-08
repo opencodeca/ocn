@@ -10,8 +10,12 @@ Ocnews::Application.routes.draw do
   namespace :app, path: '' do
     resources :posts, only: [:show, :new, :create] do
       get 'newest', on: :collection, as: 'newest'
+      post 'like', on: :member, as: 'like'
     end
 
     resources :users, only: [:show, :index]
+    resources :comments, only: [] do
+      post 'like', on: :member, as: 'like'
+    end
   end
 end
