@@ -15,6 +15,10 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.order = "random"
 
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+
   config.include FactoryGirl::Syntax::Methods
 
   config.before(:suite) { DatabaseCleaner.strategy = :truncation }
