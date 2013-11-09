@@ -9,7 +9,7 @@ module ExternalMetadata
 private
 
   def save_metadata
-    self.metadata = MetadataFetcher.new(self.url)
+    self.metadata = MetadataFetcher.new(self.url) if self.url
   end
 
 end

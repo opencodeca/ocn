@@ -71,6 +71,9 @@ group :development, :test do
 
   # Use debugger to debug, duh.
   gem 'debugger', group: [:development, :test]
+
+  # Pretty spec output
+  gem 'fivemat'
 end
 
 group :development do

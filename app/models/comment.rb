@@ -3,6 +3,9 @@ class Comment < ActiveRecord::Base
   acts_as_commentable
   acts_as_comment
 
+  # Validations
+  validates :comment, presence: true
+
   # Scopes
   # TODO: Devrait être modifier pour être un ordre plus clever.
   scope :popular, lambda { |count=10| order('created_at ASC').limit(count) }
