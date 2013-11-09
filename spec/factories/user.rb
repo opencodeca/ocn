@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :user do
+  factory :user, aliases: [:commenter] do
     email { Faker::Internet.email }
     provider 'github'
     uid { SecureRandom.hex }

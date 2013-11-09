@@ -6,6 +6,9 @@ class Comment < ActiveRecord::Base
   # Use Emotions
   acts_as_emotive
 
+  # Validations
+  validates :comment, presence: true
+
   # Scopes
   # TODO: Devrait être modifier pour être un ordre plus clever.
   scope :popular, lambda { |count=10| order('created_at ASC').limit(count) }
