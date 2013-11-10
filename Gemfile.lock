@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/mirego/emotions.git
+  revision: 195c3f57e417719b11048f2bbf7bbadc3aff7796
+  branch: feature/newly-expressed
+  specs:
+    emotions (0.2.2)
+      rails (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -69,8 +77,6 @@ GEM
     dotenv (0.9.0)
     dotenv-rails (0.9.0)
       dotenv (= 0.9.0)
-    emotions (0.2.1)
-      rails (>= 3.0.0)
     erubis (2.7.0)
     execjs (2.0.2)
     factory_girl (4.2.0)
@@ -247,7 +253,7 @@ DEPENDENCIES
   debugger
   devise
   dotenv-rails
-  emotions
+  emotions!
   factory_girl_rails
   ffaker
   fivemat

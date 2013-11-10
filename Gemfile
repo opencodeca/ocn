@@ -108,7 +108,7 @@ gem 'rails_12factor'
 gem 'parole'
 
 # Use emotions to handle feelings on a link
-gem 'emotions'
+gem 'emotions', github: 'mirego/emotions', branch: 'feature/newly-expressed'
 
 # Use Devise to handle users
 gem 'devise'
