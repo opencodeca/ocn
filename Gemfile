@@ -51,11 +51,14 @@ gem 'friendly_id', '>= 5.0.1'
 # Use presenters because they're cool
 gem 'bourgeois', '>= 0.1.5'
 
-# Use gaffe to handle error pages
-gem 'gaffe'
 
 # Use kaminari to create pages and move from page 1 to 2 to 3 .. till end.
 gem 'kaminari'
+
+group :production do
+  # Use gaffe to handle error pages
+  gem 'gaffe'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
