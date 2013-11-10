@@ -1,0 +1,4 @@
+<% if @comment.commentable.is_a?(Post) %>
+  <%= render partial: 'app/posts/mini', locals: { post: @comment.commentable } %>
+<% end %>
+<%= render partial: 'app/comments/form', locals: { commentable: @comment } %>
