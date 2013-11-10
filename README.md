@@ -1,5 +1,10 @@
 # [nom].opencode.ca
 
+<p align="center">
+  <a href="https://codeclimate.com/github/opencodeqc/ocn"><img src="https://codeclimate.com/github/opencodeqc/ocn.png" /></a>
+  <a href="https://travis-ci.org/opencodeqc/ocn"><img src="https://travis-ci.org/opencodeqc/ocn.png?branch=master" /></a>
+</p>
+
 ## P'tit brief
 
 #### Objectif
