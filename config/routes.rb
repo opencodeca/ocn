@@ -14,7 +14,7 @@ Ocnews::Application.routes.draw do
     end
 
     resources :users, only: [:show, :index]
-    resources :comments, only: [] do
+    resources :comments, only: [:create] do
       post 'like', on: :member, as: 'like'
     end
   end
