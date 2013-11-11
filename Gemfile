@@ -70,7 +70,7 @@ group :development, :test do
   gem 'factory_girl_rails'
 
   # Use debugger to debug, duh.
-  gem 'debugger', group: [:development, :test]
+  gem 'debugger'
 
   # Pretty spec output
   gem 'fivemat'
@@ -78,13 +78,13 @@ end
 
 group :development do
   # Use better_errors for nicer rails error page
-  gem 'better_errors', group: [:development]
+  gem 'better_errors'
 
   # Use binding_of_caller for rails live web debugging with better_errors
-  gem 'binding_of_caller', group: [:development]
+  gem 'binding_of_caller'
 
   # Remove asset lines from STDOUT
-  gem 'quiet_assets', group: :development
+  gem 'quiet_assets'
 end
 
 group :test do
