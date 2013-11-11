@@ -1,4 +1,6 @@
 class PostPresenter < Bourgeois::Presenter
+  helper :with_description, unless: -> { url.present? }
+
   # Return the domain part of the post URL
   def domain
     url.split('/')[2]
@@ -18,5 +20,10 @@ class PostPresenter < Bourgeois::Presenter
   # Return a link element to the author profile page
   def author_link
     view.link_to user.username, view.app_user_path(user)
+  end
+
+  # Return the formatted description
+  def formatted_description
+    view.simple_format(description)
   end
 end
