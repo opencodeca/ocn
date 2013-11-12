@@ -2,7 +2,7 @@ module PostPopularSorting
   extend ActiveSupport::Concern
 
   included do
-    scope :popular, -> do
+    scope :popular, lambda {
       limit_updated_at = 2.months.ago
       rank_select = "
         posts.*,
@@ -12,6 +12,6 @@ module PostPopularSorting
       ".gsub(/\s+/, " ").strip
 
       select(rank_select).where('updated_at >= ?', limit_updated_at).order('rank DESC')
-    end
+    }
   end
 end
