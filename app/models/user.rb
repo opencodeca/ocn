@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   # Associations
   has_many :posts
+  has_many :comments, as: :commenter
 
   # Validations
   validates :username, presence: true

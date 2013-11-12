@@ -8,6 +8,8 @@ class Comment < ActiveRecord::Base
 
   # Validations
   validates :comment, presence: true
+  validates :commenter, presence: true
+  validates :commentable, presence: true
 
   # Scopes
   # TODO: Devrait être modifier pour être un ordre plus clever.

@@ -33,6 +33,7 @@ module App
     # GET /posts/:id
     def show
       @comments = @post.comments.popular
+      @comment = @post.comments.build(commenter: current_user)
     end
 
     # POST /posts/:id/like
