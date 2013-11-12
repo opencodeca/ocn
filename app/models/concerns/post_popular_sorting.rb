@@ -3,7 +3,7 @@ module PostPopularSorting
 
   included do
     scope :popular, -> do
-      limit_updated_at = Time.now - 2.month
+      limit_updated_at = 2.months.ago
       rank_select = "
         posts.*,
         round(((posts.comments_count + 3 * posts.like_emotions_count)
