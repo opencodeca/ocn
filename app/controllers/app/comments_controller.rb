@@ -4,7 +4,7 @@ module App
 
     # POST /comments/new
     def create
-      @comment = Comment.new(commenter: current_user)
+      @comment = current_user.comments.build
       @comment.assign_attributes(comment_params)
 
       if @comment.save
