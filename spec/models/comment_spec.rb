@@ -1,16 +1,6 @@
 require 'spec_helper'
 
 describe Comment do
-  let(:valid_document) do
-    OpenStruct.new({
-      title: 'Test',
-      description: 'Nice description',
-    })
-  end
-
-  before do
-    MetadataFetcher.any_instance.stub(:document).and_return(valid_document)
-  end
 
   describe :Factories do
     context "Valid factory" do
