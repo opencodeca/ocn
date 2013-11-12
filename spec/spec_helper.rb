@@ -21,6 +21,12 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 
+  # Always stub MetadataFetcher
+  config.before(:each) do
+    valid_document = OpenStruct.new({ title: 'Test', description: 'Nice description' })
+    MetadataFetcher.any_instance.stub(:document).and_return(valid_document)
+  end
+
   config.before(:suite) { DatabaseCleaner.strategy = :truncation }
   config.before(:each) { DatabaseCleaner.start }
   config.after(:each) { DatabaseCleaner.clean }
