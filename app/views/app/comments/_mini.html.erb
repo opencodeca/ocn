@@ -10,5 +10,11 @@
     <div class="body">
       <%= simple_format(comment.comment) %>
     </div>
+
+    <% comment.with_comments do %>
+      <ul>
+        <%= render partial: 'app/comments/list', locals: { comments: comment.comments } %>
+      </ul>
+    <% end %>
   <% end %>
 </li>
