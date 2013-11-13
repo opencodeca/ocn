@@ -3,7 +3,10 @@
     <div class="link">
       <%= post.upvote_link(current_user) %>
       <%= link_to post.title, post.url %>
-      <span class="domain"><%= post.domain %></span>
+
+      <% post.with_url do %>
+        <span class="domain"><%= post.domain %></span>
+      <% end %>
     </div>
 
     <div class="meta">

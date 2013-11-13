@@ -16,7 +16,6 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   # Validations
-  validates :url, presence: true, http: true
   validates :title, presence: true
   validates_with PostValidator
 

@@ -1,5 +1,6 @@
 class PostPresenter < Bourgeois::Presenter
   helper :with_description, unless: -> { url.present? }
+  helper :with_url, if: -> { url.present? }
 
   # Return the domain part of the post URL
   def domain
