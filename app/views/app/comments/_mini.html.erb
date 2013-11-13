@@ -1,7 +1,7 @@
 <li class="comment">
   <% present comment do |comment| %>
     <div class="meta">
-      <%= link_to '▲', like_app_comment_path(comment), method: :post %>
+      <%= comment.upvote_link(current_user) %>
       <%= comment.author_link %>
       , il y a
       <%= link_to time_ago_in_words(comment.created_at), app_comment_path(comment) %>

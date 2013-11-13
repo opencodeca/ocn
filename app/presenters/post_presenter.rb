@@ -22,6 +22,13 @@ class PostPresenter < Bourgeois::Presenter
     view.link_to user.username, view.app_user_path(user)
   end
 
+  # Return the up vote link
+  def upvote_link(user)
+    if !user.like_about?(object)
+      view.link_to '▲', view.like_app_post_path(self), method: :post
+    end
+  end
+
   # Return the formatted description
   def formatted_description
     view.simple_format(description)
