@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   acts_as_emotional
 
   include ::GithubConnectReady
+  include ::RolePlayer
 
   # Associations
   has_many :posts
@@ -13,6 +14,9 @@ class User < ActiveRecord::Base
 
   # Validations
   validates :username, presence: true
+
+  # Contants
+  ROLES = %w{moderator speaker}
 
   # Fake :id for path/url helpers, eg. app_user_path(user)
   def to_param
