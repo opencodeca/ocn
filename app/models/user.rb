@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true
 
   # Contants
-  ROLES = %w{moderator presentator}
+  ROLES = %w{moderator speaker}
 
   # Fake :id for path/url helpers, eg. app_user_path(user)
   def to_param
