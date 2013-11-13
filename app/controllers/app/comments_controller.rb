@@ -17,6 +17,10 @@ module App
       end
     end
 
+    # GET /comments/:id
+    def show
+    end
+
     # POST /comments/:id/like
     def like
       if current_user.express!(:like, @comment).newly_expressed?
