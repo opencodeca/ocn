@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   include ExternalMetadata
-  include PostPopularSorting
+  include PopularSorting
 
   # Use Parole
   acts_as_commentable
