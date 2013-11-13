@@ -4,4 +4,8 @@
   <ol class="comments-list">
     <%= render partial: 'mini', locals: { comment: @comment } %>
   </ul>
+
+  <%= render partial: 'app/comments/form', locals: { commentable: @post } %>
+
+  <%= render partial: 'app/comments/list', locals: { comments: @comments.popular } %>
 <% end %>

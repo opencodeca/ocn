@@ -13,7 +13,7 @@
 
     <% comment.with_comments do %>
       <ul>
-        <%= render partial: 'app/comments/list', locals: { comments: comment.comments } %>
+        <%= render partial: 'app/comments/list', locals: { comments: comment.comments.popular } %>
       </ul>
     <% end %>
   <% end %>

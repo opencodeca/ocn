@@ -12,5 +12,5 @@
 
   <%= render partial: 'app/comments/form' %>
 
-  <%= render partial: 'app/comments/list', locals: { comments: @comments } %>
+  <%= render partial: 'app/comments/list', locals: { comments: @comments.popular } %>
 <% end %>
