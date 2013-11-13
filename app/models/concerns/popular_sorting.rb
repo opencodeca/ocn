@@ -1,6 +1,4 @@
 module PopularSorting
-  extend ActiveSupport::Concern
-
   def self.included(base)
     base.class_eval do
       scope :popular, -> do
