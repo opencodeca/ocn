@@ -19,7 +19,10 @@ module App
 
     # POST /comments/:id/like
     def like
-      current_user.express!(:like, @comment)
+      if current_user.express!(:like, @comment).newly_expressed?
+        @comment.commenter.increment!(:karma)
+      end
+
       redirect_to :back
     end
 
