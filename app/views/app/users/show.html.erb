@@ -19,7 +19,7 @@
     </tr>
     <tr>
       <th>présentateur?</th>
-      <td><%= user.is_presentator? ? 'Hell yeah' : 'Ça va venir!' %></td>
+      <td><%= user.is?(:presentator) ? 'Hell yeah' : 'Ça va venir!' %></td>
     </tr>
   </table>
 <% end %>
