@@ -8,7 +8,7 @@ class CommentPresenter < Bourgeois::Presenter
 
   # Return the up vote link
   def upvote_link(user)
-    if !user.like_about?(object)
+    if user && !user.like_about?(object)
       view.link_to '▲', view.like_app_comment_path(self), method: :post
     end
   end
