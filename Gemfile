@@ -102,7 +102,11 @@ gem 'puma'
 
 # Use hanzo for deployment
 gem 'hanzo'
-gem 'rails_12factor'
+
+group :production do
+  # Fix a few things on Heroku
+  gem 'rails_12factor'
+end
 
 # Use parole to handle comments on a link
 gem 'parole'
