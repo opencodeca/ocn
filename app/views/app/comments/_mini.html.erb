@@ -13,6 +13,11 @@
       <%= simple_format(comment.comment) %>
     </div>
 
+    <div class="comment-box">
+      <%= render partial: 'app/comments/form', locals: { comment: comment.comments.build } %>
+      <a href="javascript://" class="reply">reply</a>
+    <div>
+
     <% threaded && comment.with_comments do %>
       <ul>
         <%= render partial: 'app/comments/list', locals: { comments: comment.comments.popular } %>

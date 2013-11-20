@@ -4,3 +4,7 @@
 //= require_tree ../../../vendor/assets/javascripts/
 //= require_tree .
 //= require turbolinks
+
+$(document).on('click', '.reply', function(e){
+  $(this).prev().removeAttr('hidden');
+});
