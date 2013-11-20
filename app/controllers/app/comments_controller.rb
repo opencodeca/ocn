@@ -19,6 +19,7 @@ module App
 
     # GET /comments/:id
     def show
+      @comments = @comment.comments
     end
 
     # POST /comments/:id/like

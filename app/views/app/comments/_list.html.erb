@@ -1,5 +1,5 @@
 <ol class="comments-list">
   <% comments.each do |comment| %>
-    <%= render partial: 'app/comments/mini', locals: { comment: comment } %>
+    <%= render partial: 'app/comments/mini', locals: { threaded: true, comment: comment } %>
   <% end %>
 </ol>
