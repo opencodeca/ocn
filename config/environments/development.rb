@@ -35,11 +35,4 @@ Ocnews::Application.configure do
   # Use better_errors
   config.middleware.use BetterErrors::Middleware
   BetterErrors.application_root = File.join(Rails.root, 'app')
-
-  # Log on stdout
-  config.logger = Logger.new(STDOUT).tap do |logger|
-    logger.formatter = lambda do |severity, datetime, progname, msg|
-      "#{datetime}: #{msg}\n"
-    end
-  end
 end
