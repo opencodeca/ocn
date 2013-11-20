@@ -6,5 +6,5 @@
 //= require turbolinks
 
 $(document).on('click', '.reply', function(e){
-  $(this).prev().show();
+  $(this).prev().removeAttr('hidden');
 });
