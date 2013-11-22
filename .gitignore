@@ -17,6 +17,7 @@
 
 # Ignore user environment
 .env
+.ruby-version
 
 # Ignore annoying files
 .DS_Store
