@@ -27,5 +27,7 @@ module Ocnews
     if Rails.configuration.domain
       config.middleware.use Rack::CanonicalHost, Rails.configuration.domain
     end
+
+    config.action_dispatch.rescue_responses.merge! 'User::DoubleLikeError' => :forbidden
   end
 end

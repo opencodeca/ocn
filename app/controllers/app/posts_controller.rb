@@ -38,14 +38,7 @@ module App
 
     # POST /posts/:id/like
     def like
-      if current_user.express!(:like, @post).newly_expressed?
-        # Should definitively be located in a callback
-        # but since Emotions don't provide them for now,
-        # it's here.
-        # https://github.com/mirego/emotions/pull/8
-        @post.user.increment!(:karma)
-      end
-
+      current_user.like_post!(@post)
       redirect_to :back
     end
 
