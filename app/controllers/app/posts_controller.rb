@@ -44,9 +44,10 @@ module App
         # it's here.
         # https://github.com/mirego/emotions/pull/8
         @post.user.increment!(:karma)
+        redirect_to :back
+      else
+        render text: "Le maximum d'amour est déjà donné!", status: 403
       end
-
-      redirect_to :back
     end
 
   private
