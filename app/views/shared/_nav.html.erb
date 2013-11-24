@@ -1,6 +1,6 @@
-<nav>
+<nav class="navbar navbar-default" role="navigation">
   <% if user_signed_in? %>
-    <div class="profile pull-right">
+    <div class="profile navbar-text navbar-right">
       <% if current_user.gravatar_id %>
         <%= image_tag "https://www.gravatar.com/avatar/#{current_user.gravatar_id}", width: 16, height: 16 %>
       <% end %>
@@ -9,7 +9,14 @@
     </div>
   <% end %>
 
-  <ul class="nav nav-pills">
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+  </button>
+
+  <ul class="nav navbar-nav collapse navbar-collapse" id="main-nav">
     <li class="<%= navigation_class(:popular) %>">
       <%= link_to t('.popular'), root_path %>
     </li>

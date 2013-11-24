@@ -10,6 +10,7 @@
  *
  */
 
+@import "variables";
 @import "bootstrap";
 
 * {
@@ -21,13 +22,25 @@
 [hidden] { display: none } /* Pour IE 8/9 */
 
 body {
-  padding: 20px;
+  padding: 0 15px;
+}
+
+.navbar{
+  margin-top:15px;
 }
 
 .posts-list, .comments-list {
   li {
     margin-bottom: 20px;
   }
+}
+
+.profile {
+  float: right;
+}
+
+.navbar-toggle {
+  float: left;
 }
 
 .post {
@@ -51,8 +64,30 @@ body {
   }
 }
 
+.karma{
+  @extend .label;
+  @extend .label-info;
+}
+
 .comment {
   .meta {
     margin-bottom: 10px;
+  }
+}
+
+button{
+  @extend .btn;
+  @extend .btn-default;
+}
+
+.form-group textarea{
+  @extend input;
+}
+
+@media screen and (max-width: $screen-sm-min){
+
+  .navbar {
+    padding: 4px 10px;
+    margin: 0 -15px 20px;
   }
 }
