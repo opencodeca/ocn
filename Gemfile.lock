@@ -152,7 +152,7 @@ GEM
       nokogiri
       sanitize
     polyglot (0.3.3)
-    puma (2.0.1)
+    puma (2.6.0)
       rack (>= 1.1, < 2.0)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
