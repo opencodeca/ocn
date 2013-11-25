@@ -1,6 +1,6 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navigation" role="navigation">
   <% if user_signed_in? %>
-    <div class="profile navbar-text navbar-right">
+    <div class="profile">
       <% if current_user.gravatar_id %>
         <%= image_tag "https://www.gravatar.com/avatar/#{current_user.gravatar_id}", width: 16, height: 16 %>
       <% end %>
@@ -16,7 +16,9 @@
       <span class="icon-bar"></span>
   </button>
 
-  <ul class="nav navbar-nav collapse navbar-collapse" id="main-nav">
+  <a class="ocn-brand" href="#">OCN</a>
+
+  <ul class="site-nav" id="main-nav">
     <li class="<%= navigation_class(:popular) %>">
       <%= link_to t('.popular'), root_path %>
     </li>
@@ -34,11 +36,12 @@
     <li class="<%= navigation_class(:users) %>">
       <%= link_to t('.users'), app_users_path %>
     </li>
-
-    <% if user_signed_in? %>
-      <li><%= link_to t('.logout'), logout_path %> </li>
-    <% else %>
-      <li><%= link_to t('.login'), user_omniauth_authorize_path(:github) %></li>
-    <% end %>
   </ul>
+
+  <% if user_signed_in? %>
+    <button class="connection-action"><%= link_to t('.logout'), logout_path %> </button>
+  <% else %>
+    <button class="connection-action"><%= link_to t('.login'), user_omniauth_authorize_path(:github) %></button>
+  <% end %>
+
 </nav>
