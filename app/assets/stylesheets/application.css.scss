@@ -62,7 +62,7 @@ body {
 
 
 .posts-list, .comments-list {
-  padding:0;
+  padding:10px 0;
 
   li {
     padding: 20px;
@@ -121,13 +121,17 @@ ul.posts-list, .comments-list {
 }
 
 .comment-box {
-  border-left: solid 2px lighten($brand-primary, 70%);
+  ol.comments-list{
+    border-left: solid 2px lighten($brand-primary, 70%);
+    }
+  padding: 0 10px;
   ul{
     padding: 10px 0;
   }
 }
 
 .comment {
+  padding: 0;
   .meta {
     margin-bottom: 10px;
   }
