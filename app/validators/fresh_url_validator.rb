@@ -5,6 +5,8 @@ class FreshUrlValidator < ActiveModel::EachValidator
   end
 
   def validate_each(record, attribute, value)
+    return if record.url.blank?
+
     freshness_range = 2.weeks.ago
     posts = record.class.where(url: record.url).where("created_at > ?", freshness_range)
 
