@@ -36,12 +36,13 @@
     <li class="<%= navigation_class(:users) %>">
       <%= link_to t('.users'), app_users_path %>
     </li>
+
+    <li>
+      <% if user_signed_in? %>
+        <li><%= link_to t('.logout'), logout_path %> </li>
+      <% else %>
+        <li><%= link_to t('.login'), user_omniauth_authorize_path(:github) %></li>
+      <% end %>
+    </li>
   </ul>
-
-  <% if user_signed_in? %>
-    <button class="connection-action"><%= link_to t('.logout'), logout_path %> </button>
-  <% else %>
-    <button class="connection-action"><%= link_to t('.login'), user_omniauth_authorize_path(:github) %></button>
-  <% end %>
-
 </nav>
