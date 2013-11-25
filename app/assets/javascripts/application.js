@@ -6,5 +6,5 @@
 //= require turbolinks
 
 $(document).on('click', '.reply', function(e){
-  $(this).parent().parent().find(".comment-form").first().removeAttr('hidden')
+  $(this).closest(".comment").find(".comment-form").removeAttr('hidden')
 });
