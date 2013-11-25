@@ -65,7 +65,7 @@ body {
   padding:10px 0;
 
   li {
-    padding: 20px;
+    padding: 20px 20px 0;
 
     &:hover {
       background-color: none;
@@ -121,32 +121,34 @@ ul.posts-list, .comments-list {
 }
 
 .comment-box {
+  padding: 0;
   ol.comments-list{
     border-left: solid 2px lighten($brand-primary, 70%);
-    }
-  padding: 0 10px;
+  }
   ul{
-    padding: 10px 0;
+    padding: 0;
   }
 }
 
 .comment {
   padding: 0;
   .meta {
+    font-size: 0.8em;
     margin-bottom: 10px;
   }
   .reply {
     @extend .btn;
     @extend .btn-default;
     @extend .btn-xs;
+    margin: 0 10px;
   }
 }
 
-button {
-  @extend .btn;
-  @extend .btn-default;
+.comment-form{
+  background-color: #EEE;
+  border-radius: 3px;
+  padding:10px;
 }
-
 
 @media screen and (max-width: $screen-sm-min) {
 

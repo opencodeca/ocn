@@ -1,4 +1,4 @@
-<form role="form" class="comment-form"<%= ' hidden' if comment.commentable_type == 'Comment' %>>
+<div role="form" class="comment-form"<%= ' hidden' if comment.commentable_type == 'Comment' %>>
   <%= form_for comment, url: app_comments_path do |f| %>
     <%= render_error_messages(f.object) %>
     <%= f.hidden_field :commentable_id %>
@@ -11,4 +11,4 @@
       <%= submit_tag nil, :class => "btn btn-primary"%>
     </div>
   <% end %>
-</form>
+</div>

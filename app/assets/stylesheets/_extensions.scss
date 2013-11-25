@@ -23,3 +23,8 @@
 .ocn-brand{
   @extend .navbar-brand;
 }
+
+button {
+  @extend .btn;
+  @extend .btn-default;
+}
