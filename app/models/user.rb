@@ -25,12 +25,15 @@ class User < ActiveRecord::Base
 
   def like_post!(post)
     self.class.transaction do
-      # Should definitively be located in a callback
-      # but since Emotions don't provide them for now,
-      # it's here.
-      # https://github.com/mirego/emotions/pull/8
       raise DoubleLikeError unless express!(:like, post).newly_expressed?
       post.user.increment!(:karma)
+    end
+  end
+
+  def like_comment!(comment)
+    self.class.transaction do
+      raise DoubleLikeError unless express!(:like, comment).newly_expressed?
+      comment.commenter.increment!(:karma)
     end
   end
 

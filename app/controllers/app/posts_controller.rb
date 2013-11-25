@@ -23,7 +23,9 @@ module App
       @post = current_user.posts.build
       @post.assign_attributes(post_params)
 
+
       if @post.save
+        current_user.like_post!(@post)
         redirect_to newest_app_posts_path, notice: t('.notice')
       else
         render :new

@@ -11,6 +11,8 @@ module App
         url = :back
         url = app_post_path(@comment.commentable) if @comment.commentable.is_a?(Post)
 
+        current_user.like_comment!(@comment)
+
         redirect_to url, notice: t('.notice')
       else
         render :new
@@ -24,10 +26,7 @@ module App
 
     # POST /comments/:id/like
     def like
-      if current_user.express!(:like, @comment).newly_expressed?
-        @comment.commenter.increment!(:karma)
-      end
-
+      current_user.like_comment!(@comment)
       redirect_to :back
     end
 
