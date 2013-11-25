@@ -2,24 +2,24 @@
 <%= form_for @post, url: app_posts_path do |f| %>
   <%= render_error_messages(f.object) %>
 
-  <ul>
-    <li>
-      <%= f.label :url %>
-      <%= f.url_field :url %>
-    </li>
+<form class="form-horizontal" role="form">
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :title, :class => "control-label" %>
+      <%= f.text_field :title, :class => "form-control" %>
+    </div>
+    <div class="form-group col-sm-6">
+      <%= f.label :url, :class => "control-label" %>
+      <%= f.url_field :url, :class => "form-control" %>
+    </div>
+  </div>
+    <div class="form-group">
+      <%= f.label :description, :class => "control-label" %>
+      <%= f.text_area :description, :class => "form-control" %>
+    </div>
 
-    <li>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </li>
-
-    <li>
-      <%= f.label :description %>
-      <%= f.text_area :description %>
-    </li>
-
-    <li>
-      <%= submit_tag %>
-    </li>
+    <div class="form-group">
+      <%= submit_tag nil, :class => "btn btn-primary"%>
+    </div>
   </ul>
 <% end %>

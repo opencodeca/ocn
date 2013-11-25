@@ -1,10 +1,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
-//= require_tree ../../../vendor/assets/javascripts/
+//= require bootstrap
 //= require_tree .
 //= require turbolinks
 
 $(document).on('click', '.reply', function(e){
-  $(this).prev().removeAttr('hidden');
+  $(this).parent().parent().find(".comment-form").first().removeAttr('hidden')
 });

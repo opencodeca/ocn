@@ -1,0 +1,30 @@
+.inline-action{
+  @extend .btn;
+  @extend .btn-default;
+  @extend .btn-xs;
+}
+
+.form-group{
+
+}
+
+.navigation{
+  @extend .navbar;
+  @extend .navbar-default;
+}
+
+.main-nav-links{
+  @extend .nav;
+  @extend .navbar-nav;
+  @extend .collapse;
+  @extend .navbar-collapse;
+}
+
+.ocn-brand{
+  @extend .navbar-brand;
+}
+
+button {
+  @extend .btn;
+  @extend .btn-default;
+}

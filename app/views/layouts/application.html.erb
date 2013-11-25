@@ -9,13 +9,11 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
   </head>
   <body>
-    <div class="row">
-      <div class="span12">
-        <%= render partial: 'shared/nav' %>
-        <%= render partial: 'shared/notices' %>
-        <%= yield %>
-        <%= render partial: 'shared/footer' %>
-      </div>
+    <%= render partial: 'shared/nav' %>
+    <div class="container">
+      <%= render partial: 'shared/notices' %>
+      <%= yield %>
+      <%= render partial: 'shared/footer' %>
     </div>
   </body>
 </html>
