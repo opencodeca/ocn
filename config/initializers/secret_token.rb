@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Ocnews::Application.config.secret_key_base = 'c7efcf102fa1ee7aa37de7dd116b41b3b45c7d7125cbb76bec055ae4ec129a44d2cdb094c3da0b1c927639ab7c1171312da61fdd90e9a3aadb219e63cc5383b4'
+Ocnews::Application.config.secret_key_base = Rails.configuration.secret_token

@@ -89,6 +89,9 @@ GITHUB_CLIENT_SECRET=
 
 # Database URL to use in non-development environment (remove otherwise)
 # DATABASE_URL=
+
+# Rails secret key (to hash session data)
+SECRET_TOKEN=
 ```
 
 ## Run tests
