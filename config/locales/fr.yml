@@ -10,6 +10,8 @@ fr:
       login: Connexion via GitHub
   app:
     posts:
+      create:
+        notice: "Post ajouté"
       mini:
         points_count:
           zero: '0 point'
@@ -20,6 +22,8 @@ fr:
           one: '1 commentaire'
           other: '%{count} commentaires'
     comments:
+      create:
+        notice: "Commentaire ajouté"
       mini:
         points_count:
           zero: '0 point'
