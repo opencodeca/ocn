@@ -24,6 +24,7 @@ fr:
     comments:
       create:
         notice: "Commentaire ajouté"
+        not_signed_in: "Vous devez être connecté pour commenter"
       mini:
         points_count:
           zero: '0 point'

@@ -3,6 +3,10 @@ class App::CommentsController < App::ApplicationController
 
   # POST /comments/new
   def create
+    unless current_user
+      return redirect_to :back, alert: t('.not_signed_in')
+    end
+
     @comment = current_user.comments.build
     @comment.assign_attributes(comment_params)
 
