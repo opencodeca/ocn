@@ -84,6 +84,8 @@ SENTRY_DSN=
 
 # GitHub client infos
 # Create your application at https://github.com/settings/applications
+# Authorization callback URL: http://0.0.0.0:[PORT]/users/auth/github/callback
+# (gotcha: using http://localhost... will not work here -_-)
 GITHUB_CLIENT_ID=
 GITHUB_CLIENT_SECRET=
 
