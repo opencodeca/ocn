@@ -10,10 +10,14 @@ namespace :hn do
     end
 
     result.body['items'].each do |post|
-      user.posts.create({
-        title: post['title'],
-        url: post['url']
-      })
+      begin
+        user.posts.create({
+          title: post['title'],
+          url: post['url']
+        })
+      rescue Exception => e
+        puts "Error: #{e}"
+      end
     end
   end
 
