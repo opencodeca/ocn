@@ -57,14 +57,12 @@ gem 'bourgeois', '>= 0.1.5'
 # Use kaminari to create pages and move from page 1 to 2 to 3 .. till end.
 gem 'kaminari'
 
+# Use gaffe to handle error pages
+gem 'gaffe'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
-end
-
-group :production do
-  # Use gaffe to handle error pages
-  gem 'gaffe'
 end
 
 group :development, :test do

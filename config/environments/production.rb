@@ -77,11 +77,4 @@ Ocnews::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-
-  # Configure Gaffe to handle errors
-  Gaffe.configure do |c|
-    c.errors_controller = App::ErrorsController
-  end
-
-  Gaffe.enable!
 end
