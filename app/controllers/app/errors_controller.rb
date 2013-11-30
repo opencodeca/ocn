@@ -1,10 +1,8 @@
-module App
-  class ErrorsController < AppController
-    include Gaffe::Errors
-    layout 'application'
+class App::ErrorsController < App::ApplicationController
+  include Gaffe::Errors
+  layout 'application'
 
-    def show
-      render @rescue_response
-    end
+  def show
+    render @rescue_response
   end
 end
