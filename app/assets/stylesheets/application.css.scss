@@ -149,6 +149,12 @@ ul.posts-list, .comments-list {
   padding:10px;
 }
 
+.alert-error {
+  background-color: #F0D8D8;
+  border-color: #E9C6C6;
+  color: #BD4545;
+}
+
 @media screen and (max-width: $screen-sm-min) {
 
   .navbar {
