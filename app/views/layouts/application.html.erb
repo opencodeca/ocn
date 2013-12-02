@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <title>OCN</title>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -9,11 +11,13 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
   </head>
   <body>
-    <%= render partial: 'shared/nav' %>
-    <div class="container">
-      <%= render partial: 'shared/notices' %>
-      <%= yield %>
-      <%= render partial: 'shared/footer' %>
+    <div id="page">
+      <%= render partial: 'shared/nav' %>
+      <div class="container">
+        <%= render partial: 'shared/notices' %>
+        <%= yield %>
+        <%= render partial: 'shared/footer' %>
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,311 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ */
+
+@import "variables";
+@import "bootstrap";
+@import "extensions";
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+[hidden] { display: none } /* Pour IE 8/9 */
+
+html { width: 100%; height: 100%; }
+
+body {
+  width: 100%; height: 100%;
+  background: #303030;
+
+  &.nav-open {
+    transition: 0.2s;
+    position: relative;
+    left: -200px;
+  }
+
+  &.nav-close {
+    transition: 0.2s;
+    position: relative;
+    left: 0px;
+  }
+}
+
+#page {
+  box-shadow: 0 0 25px rgba(black, 0.5);
+  height: 100%;
+  overflow: auto;
+  background: #E9F1F7;
+}
+
+#btn-toggle-nav {
+  width: 50px;
+  height: 42px;
+  display: none;
+  float: right;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  outline: none;
+
+  &.open {
+    background: url(<%= asset_path "btn-open-nav.png" %>) center center no-repeat;
+    background-size: 25px 20px;
+  }
+
+  &.close {
+    background: url(<%= asset_path "btn-close-nav.png" %>) center center no-repeat;
+    background-size: 20px 20px;
+    background-color: $brand-primary;
+    opacity: 1; // stupid bootstrap.
+  }
+
+  &:hover {
+    background-color: $brand-primary;
+  }
+}
+
+.navigation {
+  background: $secondary;
+  overflow: auto;
+  position: relative;
+
+  &>div {
+    width: 1170px;
+    margin: auto;
+  }
+
+  .site-nav {
+    float: left;
+    list-style: none;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: block;
+      float: left;
+    }
+
+    a {
+      color: white;
+      padding: 10px 15px;
+      line-height: 22px;
+      font-weight: 300;
+      text-decoration: none;
+      display: block;
+    }
+
+    a:hover, li.active a {
+      background: $brand-primary;
+    }
+
+    &:hover li.active a {
+      background: none;
+      &:hover { background: $brand-primary; }
+    }
+  }
+
+  .connection-action {
+    margin: 14px 10px 6px;
+    float: right;
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .profile {
+    float: right;
+    padding: 10px 15px;
+    font-weight: 300;
+
+    a:hover {
+      transition: 0.2s;
+      color: rgba($brand-primary, 0.7);
+      font-weight: 300;
+      text-decoration: none;
+    }
+  }
+
+  .ocn-brand {
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.container {
+  position: relative;
+  overflow: auto;
+  min-height: 100%;
+  background: white;
+  z-index: 1;
+  padding: 35px 50px 50px;
+}
+
+.posts-list, .comments-list {
+  margin: 0;
+  padding-left: 30px;
+
+  li {
+    padding: 0 20px 20px;
+
+    &:hover {
+      background-color: none;
+    }
+
+    .meta {
+      span:after{
+        content: " | ";
+        color: #EEE;
+      }
+      span:last-child:after {
+        content: "";
+      }
+    }
+  }
+}
+
+ul.posts-list {
+  list-style: none;
+  padding: 0;
+
+  .post { padding: 0; }
+}
+
+.comments-list {
+  padding-top: 20px;
+}
+
+.post {
+  .link {
+    .upvote {
+      text-decoration: none;
+    }
+
+    a {
+      margin-right: 10px;
+    }
+
+    .domain {
+      font-size: 85%;
+
+      &:before { content: '('; }
+      &:after { content: ')'; }
+    }
+  }
+
+  .meta {
+    font-size: 0.8em;
+    clear: both;
+  }
+}
+
+.karma {
+  @extend .text-muted;
+  display:inline;
+}
+
+.comment-box {
+  padding: 0;
+  ol.comments-list{
+    border-left: solid 2px lighten($brand-primary, 70%);
+  }
+  ul{
+    padding: 0;
+  }
+}
+
+.comment {
+  padding: 0;
+  .meta {
+    font-size: 0.8em;
+    margin-bottom: 10px;
+  }
+  .reply {
+    @extend .btn;
+    @extend .btn-default;
+    @extend .btn-xs;
+    margin: 0 10px;
+  }
+}
+
+.comment-form{
+  background-color: #EEE;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 1199px) {
+  .navigation>div {
+    width: 970px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .navigation>div {
+    width: 750px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #btn-toggle-nav {
+    display: block;
+  }
+
+  .navigation {
+    &>div {
+      width: 100%;
+    }
+
+    .site-nav {
+      position: fixed;
+      width: 200px;
+      height: 100%;
+      top: 0; right: 0;
+      z-index: -1;
+      text-align: center;
+
+      li {
+        float: none;
+      }
+
+      a:hover, li.active a {
+        background: $secondary;
+      }
+      &:hover li.active a {
+        background: none;
+        &:hover { background: $secondary; }
+      }
+    }
+
+    .ocn-brand {
+      padding: 10px;
+    }
+  }
+
+  .container {
+    padding: 20px 10px;
+  }
+
+  .posts-list {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 0 0 20px 0;
+    }
+  }
+
+
+}
