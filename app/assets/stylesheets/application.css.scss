@@ -46,6 +46,10 @@ body {
     @extend .navbar-text;
     @extend .navbar-right;
     float: right;
+
+    img {
+      width: 16px;
+    }
   }
 
   .navbar-toggle {

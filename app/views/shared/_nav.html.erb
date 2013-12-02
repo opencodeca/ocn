@@ -1,14 +1,5 @@
 <nav class="navigation" role="navigation">
-  <% if user_signed_in? %>
-    <div class="profile">
-      <% if current_user.gravatar_id %>
-        <%= image_tag "https://www.gravatar.com/avatar/#{current_user.gravatar_id}", width: 16, height: 16 %>
-      <% end %>
-      <%= link_to current_user.username, app_user_path(current_user.username) %>
-      <div class="karma"><%= current_user.karma %></div>
-    </div>
-  <% end %>
-
+  <%= render partial: 'app/users/nav_profile' %>
   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
