@@ -36,6 +36,4 @@ class User < ActiveRecord::Base
       comment.commenter.increment!(:karma)
     end
   end
-
-  class DoubleLikeError < StandardError; end
 end

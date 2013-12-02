@@ -1,0 +1,2 @@
+class DoubleLikeError < StandardError
+end
