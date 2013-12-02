@@ -1,20 +1,18 @@
-module App
-  class UsersController < AppController
-    before_action :fetch_user, only: [:show]
+class App::UsersController < App::ApplicationController
+  before_action :fetch_user, only: [:show]
 
-    # GET /users/:username
-    def show
-    end
+  # GET /users/:username
+  def show
+  end
 
-    # GET /users
-    def index
-      @users = User.all
-    end
+  # GET /users
+  def index
+    @users = User.all
+  end
 
-  protected
+protected
 
-    def fetch_user
-      @user = User.where(username: params[:id]).first!
-    end
+  def fetch_user
+    @user = User.where(username: params[:id]).first!
   end
 end

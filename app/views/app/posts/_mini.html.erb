@@ -13,7 +13,9 @@
       <span class="points-count"><%= post.points_count %></span>
       <span class="comments-count"><%= post.comments_count %></span>
       <span class="author-link"><%= post.author_link %></span>
-      <span class="timestamp"><%= time_ago_in_words(post.created_at) %></span>
+      <span class="timestamp" title="<%= post.created_at %>">
+        <%= time_ago_in_words(post.created_at) %>
+      </span>
     </div>
   <% end %>
 </li>

@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  <div class="profile">
+    <%= link_to current_user.username, app_user_path(current_user.username) %>
+    <div class="karma"><%= current_user.karma %></div>
+  </div>
+<% end %>
