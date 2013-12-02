@@ -72,9 +72,6 @@ group :development, :test do
   # Use FactoryGirl instead of fixtures
   gem 'factory_girl_rails'
 
-  # Use debugger to debug, duh.
-  gem 'debugger'
-
   # Pretty spec output
   gem 'fivemat'
 end
@@ -88,6 +85,9 @@ group :development do
 
   # Remove asset lines from STDOUT
   gem 'quiet_assets'
+
+  # Use debugger to debug, duh.
+  gem 'debugger'
 end
 
 group :test do
