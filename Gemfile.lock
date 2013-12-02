@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/Compass/compass-rails.git
+  revision: 32c16cb90f78053310b35199a970c53355bcd300
+  branch: rails4-hack
+  specs:
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
+
+GIT
   remote: git://github.com/mirego/emotions.git
   revision: 195c3f57e417719b11048f2bbf7bbadc3aff7796
   branch: feature/newly-expressed
@@ -43,8 +51,6 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.0.2.1)
-      sass (~> 3.2)
     bourgeois (0.1.5)
       actionpack (>= 3.0.0)
       activemodel (>= 3.0.0)
@@ -52,6 +58,7 @@ GEM
     choices (0.3.2)
       hashie (>= 0.4.0)
     chronic (0.10.2)
+    chunky_png (1.2.9)
     coderay (1.0.9)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -61,6 +68,10 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     columnize (0.3.6)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
     database_cleaner (1.2.0)
     debug_inspector (0.0.2)
     debugger (1.6.2)
@@ -96,6 +107,7 @@ GEM
       thor (>= 0.13.6)
     friendly_id (5.0.1)
       activerecord (~> 4.0.0)
+    fssm (0.2.10)
     gaffe (1.0.1)
       rails (>= 3.2.0)
     hanzo (0.3)
@@ -248,10 +260,10 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bootstrap-sass (~> 3.0.2.0)
   bourgeois (>= 0.1.5)
   choices
   coffee-rails (~> 4.0.0)
+  compass-rails!
   database_cleaner
   debugger
   devise

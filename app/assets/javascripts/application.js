@@ -1,7 +1,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
-//= require bootstrap
 //= require_tree .
 //= require turbolinks
 
@@ -17,22 +16,17 @@ $(document).on('keydown', 'textarea', function(e) {
 });
 
 $(document).on('click', '#btn-toggle-nav', function(e) {
-	$(this).hasClass("open") ? showMenu() : hideMenu();
+	$('body').hasClass("nav-close") ? showMenu() : hideMenu();
 });
 
 function showMenu() {
 	$("body").removeClass("nav-close");
 	$("body").addClass("nav-open");
-	$("#btn-toggle-nav").removeClass("open");
-	$("#btn-toggle-nav").addClass("close");
-
 	$(document).on('click touchstart', hideMenu);
 }
 
 function hideMenu() {
 	$("body").removeClass("nav-open");
 	$("body").addClass("nav-close");
-	$("#btn-toggle-nav").removeClass("close");
-	$("#btn-toggle-nav").addClass("open");
 	$(document).off('click touchstart', hideMenu);
 }
