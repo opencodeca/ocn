@@ -80,6 +80,10 @@ form {
     margin-bottom: 15px;
   }
 
+  .alert {
+    @include font-base();
+  }
+
   label {
     display: inline-block;
     font-weight: bold;
@@ -100,6 +104,8 @@ form {
   input, textarea {
     padding: 6px 12px;
   }
+
+  textarea { margin: 0; }
 
   input[type="text"],
   input[type="url"],
@@ -339,6 +345,41 @@ ul.posts-list {
     @extend .btn-xs;
     margin: 0 10px;
   }
+}
+
+.comment .comment-form {
+  margin-top: 15px;
+}
+
+.alert {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.alert-success {
+  background: #dff0d8;
+  border: 1px solid #d6e9c6;
+  color: #468847;
+}
+
+.alert-info {
+  background: #d9edf7;
+  border: 1px solid #bce8f1;
+  color: #3a87ad;
+}
+
+.alert-warning {
+  background: #fcf8e3;
+  border: 1px solid #faebcc;
+  color: #c09853;
+}
+
+.alert-danger {
+  background: #f2dede;
+  border: 1px solid #ebccd1;
+  color: #b94a48;
 }
 
 @media only screen and (max-width: 767px) {
