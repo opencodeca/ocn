@@ -1,2 +1,13 @@
-$brand-primary: #003f80;
+$brand-primary: #476481;
+$secondary: darken($brand-primary, 15%);
+$page-background: #E9F1F7;
+$mobile-nav-background: #303030;
 $font-size-base: 16px;
+$line-height-base: 1.428;
+$font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@mixin font-base($font-size: $font-size-base) {
+	font-size: $font-size;
+	line-height: $line-height-base;
+	font-family: $font-family-base;
+}

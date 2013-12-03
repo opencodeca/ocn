@@ -1,0 +1,402 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ */
+@import "compass/reset";
+@import "compass/css3/transition";
+@import "compass/css3/box-shadow";
+@import "compass/css3/appearance";
+@import "variables";
+@import "extensions";
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+[hidden] { display: none } /* Pour IE 8/9 */
+
+html { width: 100%; height: 100%; }
+
+body {
+  @include font-base();
+  width: 100%; height: 100%;
+  background: $mobile-nav-background;
+
+  &.nav-open {
+    transition: 0.2s;
+    position: relative;
+    left: -200px;
+
+    #btn-toggle-nav {
+      background: url(<%= asset_path "btn-close-nav.png" %>) center center no-repeat;
+      background-size: 20px 20px;
+      background-color: $brand-primary;
+    }
+  }
+
+  &.nav-close {
+    transition: 0.2s;
+    position: relative;
+    left: 0px;
+
+    #btn-toggle-nav {
+      background: url(<%= asset_path "btn-open-nav.png" %>) center center no-repeat;
+      background-size: 25px 20px;
+
+      &:hover {
+        background-color: $brand-primary;
+      }
+    }
+  }
+}
+
+a {
+  color: $brand-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+hr {
+  margin: 22px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+form {
+  &>div {
+    font-size: 0;
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input, textarea, label {
+    @include font-base();
+    outline: none;
+    max-width: 100%;
+  }
+
+  input[type="text"],
+  input[type="url"] {
+    height: 36px;
+  }
+
+  input, textarea {
+    padding: 6px 12px;
+  }
+
+  input[type="text"],
+  input[type="url"],
+  textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    @include box-shadow(rgba(black, 0.075) 0 1px 1px inset);
+    @include transition(border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s);
+
+    &:focus {
+      @include box-shadow(rgba(black, 0.075) 0 1px 1px inset, rgba($brand-primary, 0.6) 0 0 5px 0);
+      border-color: $brand-primary;
+    }
+  }
+
+  input[type="submit"] {
+    @include appearance(none);
+    cursor: pointer;
+    font-weight: 300;
+    border: none;
+    background: $secondary;
+    border-radius: 4px;
+    margin: 0;
+    color: white;
+    display: inline-block;
+    letter-spacing: 1px;
+
+    &:hover {
+      background: $brand-primary;
+    }
+  }
+}
+
+.half {
+  width: 48%;
+  display: inline-block;
+
+  &:nth-child(even) {
+    margin-left: 2%;
+  }
+
+  &:nth-child(odd) {
+    margin-right: 2%;
+  }
+}
+
+#page {
+  box-shadow: 0 0 25px rgba(black, 0.5);
+  height: 100%;
+  overflow: auto;
+  background: $page-background;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+.navigation {
+  background: $secondary;
+
+  &>div {
+    max-width: 1200px;
+    margin: auto;
+    height: 42px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .site-nav {
+    float: left;
+    list-style: none;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: block;
+      float: left;
+    }
+
+    a {
+      color: white;
+      padding: 10px 15px;
+      line-height: 22px;
+      font-weight: 300;
+      text-decoration: none;
+      display: block;
+    }
+
+    a:hover, li.active a {
+      background: $brand-primary;
+    }
+
+    &:hover li.active a {
+      background: none;
+      &:hover { background: $brand-primary; }
+    }
+  }
+
+  .connection-action {
+    margin: 14px 10px 6px;
+    float: right;
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .profile {
+    float: right;
+    padding: 10px 20px;
+    font-weight: 300;
+
+    a:hover {
+      color: lighten($brand-primary, 5%);
+    }
+  }
+
+  .ocn-brand {
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    float: left;
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+#btn-toggle-nav {
+  width: 50px;
+  height: 42px;
+  display: none;
+  float: right;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  overflow: auto;
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  z-index: 1;
+  padding: 35px 50px;
+}
+
+.posts-list, .comments-list {
+  margin: 0;
+  padding-left: 30px;
+
+  li {
+    padding: 0 20px 20px;
+
+    &:hover {
+      background-color: none;
+    }
+
+    .meta {
+      span:after{
+        content: " | ";
+        color: #EEE;
+      }
+      span:last-child:after {
+        content: "";
+      }
+    }
+  }
+}
+
+ul.posts-list {
+  list-style: none;
+  padding: 0;
+
+  .post { padding: 0; }
+}
+
+.comments-list {
+  padding-top: 20px;
+}
+
+.post {
+  .link {
+    .upvote {
+      text-decoration: none;
+    }
+
+    a {
+      margin-right: 10px;
+    }
+
+    .domain {
+      font-size: 85%;
+
+      &:before { content: '('; }
+      &:after { content: ')'; }
+    }
+  }
+
+  .meta {
+    font-size: 0.8em;
+    clear: both;
+  }
+}
+
+.karma {
+  color: #999;
+  display:inline;
+}
+
+.comment-box {
+  padding: 0;
+  ol.comments-list{
+    border-left: solid 2px lighten($brand-primary, 70%);
+  }
+  ul{
+    padding: 0;
+  }
+}
+
+.comment {
+  padding: 0;
+  .meta {
+    font-size: 0.8em;
+    margin-bottom: 10px;
+  }
+  .reply {
+    @extend .btn;
+    @extend .btn-default;
+    @extend .btn-xs;
+    margin: 0 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  form input[type="submit"] { width: 100%; }
+
+  .half {
+    width: 100%;
+    
+    &:nth-child(odd) {
+      margin: 0 0 15px 0;
+    }
+
+    &:nth-child(even) {
+      margin: 0;
+    }
+  }
+  #btn-toggle-nav {
+    display: block;
+  }
+
+  .navigation {
+    .site-nav {
+      position: fixed;
+      width: 200px;
+      height: 100%;
+      top: 0; right: 0;
+      z-index: -1;
+      text-align: center;
+
+      li {
+        float: none;
+      }
+
+      a:hover, li.active a {
+        background: $secondary;
+      }
+
+      &:hover li.active a {
+        background: none;
+        &:hover { background: $secondary; }
+      }
+    }
+
+    .ocn-brand, .profile {
+      padding: 10px;
+    }
+  }
+
+  .container {
+    padding: 20px 10px;
+  }
+
+  .posts-list {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 0 0 20px 0;
+    }
+  }
+}

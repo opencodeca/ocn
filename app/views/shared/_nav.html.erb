@@ -1,39 +1,37 @@
 <nav class="navigation" role="navigation">
-  <%= render partial: 'app/users/nav_profile' %>
-  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-  </button>
+  <div>
+    <%= link_to t('.title'), root_path, class: 'ocn-brand' %>
 
-  <%= link_to t('.title'), root_path, class: 'ocn-brand' %>
-
-  <ul class="site-nav" id="main-nav">
-    <li class="<%= navigation_class(:popular) %>">
-      <%= link_to t('.popular'), root_path %>
-    </li>
-
-    <li class="<%= navigation_class(:newest) %>">
-      <%= link_to t('.newest'), newest_app_posts_path %>
-    </li>
-
-    <% if user_signed_in? %>
-      <li class="<%= navigation_class(:submit) %>">
-        <%= link_to t('.submit'), new_app_post_path %>
+    <ul class="site-nav" id="main-nav">
+      <li class="<%= navigation_class(:popular) %>">
+        <%= link_to t('.popular'), root_path %>
       </li>
-    <% end %>
 
-    <li class="<%= navigation_class(:users) %>">
-      <%= link_to t('.users'), app_users_path %>
-    </li>
+      <li class="<%= navigation_class(:newest) %>">
+        <%= link_to t('.newest'), newest_app_posts_path %>
+      </li>
 
-    <li>
       <% if user_signed_in? %>
-        <li><%= link_to t('.logout'), logout_path %> </li>
-      <% else %>
-        <li><%= link_to t('.login'), user_omniauth_authorize_path(:github) %></li>
+        <li class="<%= navigation_class(:submit) %>">
+          <%= link_to t('.submit'), new_app_post_path %>
+        </li>
       <% end %>
-    </li>
-  </ul>
+
+      <li class="<%= navigation_class(:users) %>">
+        <%= link_to t('.users'), app_users_path %>
+      </li>
+
+      <li>
+        <% if user_signed_in? %>
+          <li><%= link_to t('.logout'), logout_path %> </li>
+        <% else %>
+          <li><%= link_to t('.login'), user_omniauth_authorize_path(:github) %></li>
+        <% end %>
+      </li>
+    </ul>
+
+    <button id="btn-toggle-nav"></button>
+
+    <%= render partial: 'app/users/nav_profile' %>
+  </div>
 </nav>
