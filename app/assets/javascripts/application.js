@@ -5,7 +5,7 @@
 //= require turbolinks
 
 $(document).on('click', '.reply', function(e){
-  $(this).closest(".comment").find(".comment-form").removeAttr('hidden')
+	$(this).closest(".comment").find(".comment-form").removeAttr('hidden');
 });
 
 $(document).on('keydown', 'textarea', function(e) {
