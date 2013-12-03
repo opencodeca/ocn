@@ -80,6 +80,10 @@ form {
     margin-bottom: 15px;
   }
 
+  .alert {
+    @include font-base();
+  }
+
   label {
     display: inline-block;
     font-weight: bold;
@@ -100,6 +104,8 @@ form {
   input, textarea {
     padding: 6px 12px;
   }
+
+  textarea { margin: 0; }
 
   input[type="text"],
   input[type="url"],
