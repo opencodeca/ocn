@@ -191,7 +191,7 @@ ol {
     }
 
     a {
-      color: white;
+      color: lighten($brand-primary, 40%);
       padding: 10px 15px;
       line-height: 22px;
       font-weight: 300;
@@ -201,6 +201,7 @@ ol {
 
     a:hover, li.active a {
       background: $brand-primary;
+      color: white;
     }
 
     &:hover li.active a {
@@ -223,8 +224,11 @@ ol {
     padding: 10px 20px;
     font-weight: 300;
 
-    a:hover {
-      color: lighten($brand-primary, 5%);
+    a{
+      color: lighten($brand-primary, 20%);
+      &:hover {
+        color: lighten($brand-primary, 25%);
+      }
     }
   }
 
@@ -265,10 +269,14 @@ ol {
   padding-left: 30px;
 
   li {
-    padding: 0 20px 20px;
+    padding: 10px 0 10px 10px;
 
     &:hover {
       background-color: none;
+    }
+
+    &:last-child{
+      border-bottom:none;
     }
 
     .meta {
@@ -295,6 +303,9 @@ ul.posts-list {
 }
 
 .post {
+  border-bottom: solid 1px #EEE;
+  padding: 10px 0;
+
   .link {
     .upvote {
       text-decoration: none;
@@ -387,7 +398,7 @@ ul.posts-list {
 
   .half {
     width: 100%;
-    
+
     &:nth-child(odd) {
       margin: 0 0 15px 0;
     }
@@ -437,7 +448,7 @@ ul.posts-list {
     padding: 0;
 
     li {
-      padding: 0 0 20px 0;
+      padding: 10px 0;
     }
   }
 }
