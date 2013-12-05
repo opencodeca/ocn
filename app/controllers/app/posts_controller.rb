@@ -1,4 +1,5 @@
 class App::PostsController < App::ApplicationController
+  before_action :ensure_current_user, only: [:create, :like, :new]
   before_action :fetch_post, only: [:show, :like]
 
   # GET /
@@ -21,7 +22,6 @@ class App::PostsController < App::ApplicationController
   def create
     @post = current_user.posts.build
     @post.assign_attributes(post_params)
-
 
     if @post.save
       current_user.like_post!(@post)
