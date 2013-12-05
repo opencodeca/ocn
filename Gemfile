@@ -112,6 +112,9 @@ end
 # Use parole to handle comments on a link
 gem 'parole'
 
+# Use awesome nested set for threaded comments
+gem 'awesome_nested_set'
+
 # Use emotions to handle feelings on a link
 gem 'emotions', github: 'mirego/emotions', branch: 'feature/newly-expressed'
 

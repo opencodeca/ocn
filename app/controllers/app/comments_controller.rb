@@ -9,6 +9,7 @@ class App::CommentsController < App::ApplicationController
 
     @comment = current_user.comments.build
     @comment.assign_attributes(comment_params)
+    @comment.future_child_of = @comment.commentable
 
     if @comment.save
       url = :back
