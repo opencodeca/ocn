@@ -2,7 +2,11 @@
   <% present post do |post| %>
     <div class="link">
       <%= post.upvote_link(current_user) %>
-      <%= link_to post.title, post.url %>
+      <% if post.url.blank? %>
+        <%= link_to post.title, app_post_path(post) %>
+      <% else %>
+        <%= link_to post.title, post.url %>
+      <% end %>
 
       <% post.with_url do %>
         <span class="domain"><%= post.domain %></span>
