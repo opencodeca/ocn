@@ -11,7 +11,7 @@
       <a href="javascript://" class="reply">reply</a>
     </div>
     <div class="body">
-      <%= simple_format(comment.comment) %>
+      <%= simple_format h(comment.comment) %>
     </div>
 
     <div class="comment-box">
