@@ -11,6 +11,9 @@ gem 'pg'
 gem 'omniauth'
 gem 'omniauth-github'
 
+# Use Google Analytics to track page views
+gem 'rack-google-analytics'
+
 # Use choices for custom rails settings
 gem 'choices'
 

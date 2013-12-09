@@ -8,6 +8,9 @@ defaults: &defaults
     client_id: <%= ENV['GITHUB_CLIENT_ID'] %>
     client_secret: <%= ENV['GITHUB_CLIENT_SECRET'] %>
   secret_token: <%= ENV['SECRET_TOKEN'] %>
+  google_analytics:
+    tracker: <%= ENV['GOOGLE_ANALYTICS_TRACKER'] %>
+    domain: <%= ENV['GOOGLE_ANALYTICS_DOMAIN'] %>
 
 development:
   <<: *defaults

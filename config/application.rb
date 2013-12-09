@@ -28,6 +28,11 @@ module Ocnews
       config.middleware.use Rack::CanonicalHost, Rails.configuration.domain
     end
 
+    # Google Analytics
+    if Rails.configuration.google_analytics.tracker.present?
+      config.middleware.use Rack::GoogleAnalytics, tracker: Rails.configuration.google_analytics.tracker, domain: Rails.configuration.google_analytics.domain, multiple: true
+    end
+
     config.action_dispatch.rescue_responses.merge! 'DoubleLikeError' => :forbidden
   end
 end
