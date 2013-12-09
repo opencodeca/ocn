@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
+//= require jquery.autosize
 //= require_tree .
 //= require turbolinks
 
@@ -30,3 +31,7 @@ function hideMenu() {
 	$("body").addClass("nav-close");
 	$(document).off('click touchstart', hideMenu);
 }
+
+$(function(){
+  $('#comment_comment, #post_description').autosize();
+})

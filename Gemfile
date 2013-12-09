@@ -48,6 +48,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 
+# Autosize auto-expand the writing textarea. Read more: https://github.com/jackmoore/autosize/
+gem 'autosize-rails'
+
 # Use FriendlyId to generate clean URLs
 gem 'friendly_id', '>= 5.0.1'
 
