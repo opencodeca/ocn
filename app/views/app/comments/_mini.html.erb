@@ -11,7 +11,7 @@
       <a href="javascript://" class="reply">reply</a>
     </div>
     <div class="body">
-      <%= simple_format parse_links(h(comment.comment)) %>
+      <%= comment.formatted_comment %>
     </div>
 
     <div class="comment-box">
