@@ -136,6 +136,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    micky (0.2.0)
     mime-types (1.25)
     mini_portile (0.5.2)
     minitest (4.7.5)
@@ -286,6 +287,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   kaminari
+  micky
   omniauth
   omniauth-github
   parole

@@ -20,6 +20,9 @@ gem 'choices'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# Use Micky to extract links
+gem 'micky'
+
 # Use Bootstrap for basic styling
 gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4-hack'
 
