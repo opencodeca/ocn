@@ -32,6 +32,6 @@ class PostPresenter < Bourgeois::Presenter
 
   # Return the formatted description
   def formatted_description
-    view.simple_format(description)
+    view.simple_format(view.parse_links(description))
   end
 end
