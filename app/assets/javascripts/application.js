@@ -5,7 +5,7 @@
 //= require_tree .
 //= require turbolinks
 
-$(document).on('click', '.reply', function(e){
+$(document).on('click', '.reply', function(e) {
 	$(this).closest(".comment").find(".comment-form").removeAttr('hidden');
 });
 
@@ -17,7 +17,7 @@ $(document).on('keydown', 'textarea', function(e) {
 });
 
 $(document).on('click', '#btn-toggle-nav', function(e) {
-	$('body').hasClass("nav-close") ? showMenu() : hideMenu();
+	$('body').hasClass("nav-close") ? showMenu() : hideMenu(e);
 });
 
 function showMenu() {
@@ -26,10 +26,22 @@ function showMenu() {
 	$(document).on('click touchstart', hideMenu);
 }
 
-function hideMenu() {
-	$("body").removeClass("nav-open");
-	$("body").addClass("nav-close");
-	$(document).off('click touchstart', hideMenu);
+function hideMenu(e) {
+	var x;
+
+	if (typeof e.originalEvent.touches !== "undefined") {
+		x = e.originalEvent.touches[0].pageX;
+	}
+	else {
+		x = e.pageX;
+	}
+
+	if ($(window).width() - x > 200) {
+		e.preventDefault();
+		$("body").removeClass("nav-open");
+		$("body").addClass("nav-close");
+		$(document).off('click touchstart', hideMenu);
+	}
 }
 
 $(function(){
