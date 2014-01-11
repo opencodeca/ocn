@@ -6,11 +6,25 @@ class App::PostsController < App::ApplicationController
   # GET /posts
   def popular
     @posts = Post.popular.page(params[:page]).includes(:user)
+
+    respond_to do |format|
+      format.html
+
+      # /posts/popular.rss
+      format.rss { render :layout => false }
+    end
   end
 
   # GET /posts/newest
   def newest
     @posts = Post.newest.page(params[:page]).includes(:user)
+
+    respond_to do |format|
+      format.html
+
+      # /posts/newest.rss
+      format.rss { render :layout => false }
+    end
   end
 
   # GET /posts/new
