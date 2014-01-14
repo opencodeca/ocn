@@ -11,7 +11,7 @@ class App::PostsController < App::ApplicationController
       format.html
 
       # /posts/popular.rss
-      format.rss { render :layout => false }
+      format.rss{ render layout: false }
     end
   end
 
@@ -23,7 +23,7 @@ class App::PostsController < App::ApplicationController
       format.html
 
       # /posts/newest.rss
-      format.rss { render :layout => false }
+      format.rss{ render layout: false }
     end
   end
 
