@@ -8,8 +8,13 @@ Ocnews::Application.routes.draw do
   root 'app/posts#popular'
 
   namespace :app, path: '' do
+
+    # /rss will always show recent posts (using /posts/newest?format=rss)
+    get 'rss', to: 'posts#newest', defaults: { format: :rss }
+
     resources :posts, only: [:show, :new, :create] do
       get 'newest', on: :collection, as: 'newest'
+      get 'popular', on: :collection, as: 'popular'
       post 'like', on: :member, as: 'like'
     end
 
