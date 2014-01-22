@@ -23,4 +23,8 @@ class Post < ActiveRecord::Base
 
   # Scopes
   scope :newest, lambda { order('created_at DESC') }
+
+  def virgin?
+    (like_emotions_count - 1) + comments.count <= 0
+  end
 end

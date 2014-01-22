@@ -30,6 +30,13 @@ class PostPresenter < Bourgeois::Presenter
     end
   end
 
+  # Return the delete link if the post has no comments and the user owns the post
+  def destroy_link(user)
+    if object.user == user && object.virgin?
+      view.link_to '⌫', view.app_post_path(self), method: :delete, class: "delete"
+    end
+  end
+
   # Return the formatted description
   def formatted_description
     view.simple_format(view.parse_links(description))

@@ -12,6 +12,8 @@ fr:
     posts:
       create:
         notice: "Post ajouté"
+      delete:
+        unauthorized: "Vous n'êtes pas autorisé à supprimer ce post"
       mini:
         points_count:
           zero: '0 point'
