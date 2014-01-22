@@ -53,7 +53,7 @@ class App::PostsController < App::ApplicationController
 
   # DELETE /posts/:id
   def destroy
-    action = PostDeleter.new(@post).run!
+    action = PostDeleter.new(current_user, @post).run!
 
     if action
       redirect_to :back

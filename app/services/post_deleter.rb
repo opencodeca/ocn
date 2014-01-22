@@ -1,16 +1,25 @@
 class PostDeleter
-  def initialize(post)
+  def initialize(user, post)
     @post = post
-    @user = post.user
+    @user = user
+    @submitter = post.user
   end
 
   def run!
-    if @post.virgin? && @post.destroy
+    if destroyed?
       decrement_submitter_karma
+    else
+      false
     end
   end
 
 private
+
+  def destroyed?
+    if @post.virgin? && (@submitter == @user)
+      @post.destroy
+    end
+  end
 
   def decrement_submitter_karma
     @user.decrement!(:karma)
