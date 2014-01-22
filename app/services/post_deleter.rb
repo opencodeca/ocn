@@ -7,7 +7,7 @@ class PostDeleter
 
   def run!
     if destroyed?
-      decrement_submitter_karma
+      remove_emotion
     else
       false
     end
@@ -21,7 +21,8 @@ private
     end
   end
 
-  def decrement_submitter_karma
+  def remove_emotion
+    @user.no_longer_express!(:like, @post)
     @user.decrement!(:karma)
   end
 end
