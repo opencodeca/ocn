@@ -53,8 +53,9 @@ class App::PostsController < App::ApplicationController
 
   # DELETE /posts/:id
   def destroy
-    if @post.user == current_user
-      @post.destroy if @post.virgin?
+    action = PostDeleter.new(@post).run!
+
+    if action
       redirect_to :back
     else
       redirect_to :back, notice: t('.unauthorized')
