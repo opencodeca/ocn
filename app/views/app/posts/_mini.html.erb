@@ -7,6 +7,7 @@
       <% else %>
         <%= link_to post.title, post.url %>
       <% end %>
+      <%= post.destroy_link(current_user) %>
 
       <% post.with_url do %>
         <span class="domain"><%= post.domain %></span>

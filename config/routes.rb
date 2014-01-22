@@ -12,7 +12,7 @@ Ocnews::Application.routes.draw do
     # /rss will always show recent posts (using /posts/newest?format=rss)
     get 'rss', to: 'posts#newest', defaults: { format: :rss }
 
-    resources :posts, only: [:show, :new, :create] do
+    resources :posts, only: [:show, :new, :create, :destroy] do
       get 'newest', on: :collection, as: 'newest'
       get 'popular', on: :collection, as: 'popular'
       post 'like', on: :member, as: 'like'

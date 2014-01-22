@@ -1,6 +1,6 @@
 class App::PostsController < App::ApplicationController
   before_action :ensure_current_user, only: [:create, :like, :new]
-  before_action :fetch_post, only: [:show, :like]
+  before_action :fetch_post, only: [:show, :like, :destroy]
 
   # GET /
   # GET /posts
@@ -49,6 +49,16 @@ class App::PostsController < App::ApplicationController
   def show
     @comments = @post.comments.popular
     @comment = @post.comments.build(commenter: current_user)
+  end
+
+  # DELETE /posts/:id
+  def destroy
+    if @post.user == current_user
+      @post.destroy if @post.virgin?
+      redirect_to :back
+    else
+      redirect_to :back, notice: t('.unauthorized')
+    end
   end
 
   # POST /posts/:id/like
