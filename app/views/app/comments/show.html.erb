@@ -5,5 +5,4 @@
 </ul>
 
 <%= render partial: 'app/comments/form', locals: { comment: @comment.commentable.comments.build } %>
-
 <%= render partial: 'app/comments/list', locals: { comments: @comments.popular } %>
