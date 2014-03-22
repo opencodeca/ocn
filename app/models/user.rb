@@ -36,4 +36,12 @@ class User < ActiveRecord::Base
       comment.commenter.increment!(:karma)
     end
   end
+
+  def talks
+    @_talks ||= if twitter_username
+      Talk.for_username(twitter_username)
+    else
+      []
+    end
+  end
 end

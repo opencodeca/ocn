@@ -4,6 +4,6 @@ class UserPresenter < Bourgeois::Presenter
   end
 
   def profile_picture
-    view.image_tag "https://www.gravatar.com/avatar/#{gravatar_id}" if gravatar_id
+    "https://www.gravatar.com/avatar/#{gravatar_id}?s=150" if gravatar_id
   end
 end

@@ -44,6 +44,8 @@ fr:
     users:
       index:
         page_title: 'Liste des membres'
+      show:
+        karma: 'Karma: %{score}'
   activerecord:
     models:
       post: 'Article'

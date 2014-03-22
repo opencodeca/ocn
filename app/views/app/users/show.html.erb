@@ -1,26 +1,44 @@
 <% content_for :current_section, :users %>
 <% content_for :page_title, @user.username %>
 
-<% present @user do |user| %>
-  <table>
-    <tr>
-      <th>user:</th>
-      <td>
+<div class="user-profile">
+  <% present @user do |user| %>
+    <img class="user-picture" src="<%= user.profile_picture %>" />
+
+    <div class="user-info">
+      <h1 class="user-fullname">
         <%= user.name %>
-        (<%= link_to(user.username, user.github_profile_url) %>)
-      </td>
-    </tr>
-    <tr>
-      <th>created:</th>
-      <td><%= time_ago_in_words(user.created_at) %> ago</td>
-    </tr>
-    <tr>
-      <th>karma:</th>
-      <td><%= user.karma %></td>
-    </tr>
-    <tr>
-      <th>présentateur?</th>
-      <td><%= user.is?(:speaker) ? 'Hell yeah' : 'Ça va venir!' %></td>
-    </tr>
-  </table>
-<% end %>
+        <span class="user-username">(<%= user.username %>)</span>
+      </h1>
+
+      <p class="user-karma">
+        <%= t('.karma', score: user.karma) %>
+      </p>
+
+      <div class="user-social">
+        <%= link_to "https://github.com/#{user.username}" do %>
+          <i class="fa fa-github"></i>
+        <% end %>
+
+        <% if user.twitter_username %>
+          <%= link_to "https://twitter.com/#{user.twitter_username}" do %>
+            <i class="fa fa-twitter"></i>
+          <% end %>
+        <% end %>
+      </div>
+
+      <% if user.talks.any? %>
+        <hr />
+
+        <div class="user-talks">
+          <h3>Présentations à l'OpenCode</h3>
+          <ul class="user-talks-list">
+            <% user.talks.each do |talk| %>
+              <li><%= talk.title.html_safe %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

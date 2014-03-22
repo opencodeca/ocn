@@ -1,0 +1,60 @@
+.user-profile {
+  @extend %clearfix;
+}
+
+.user-picture {
+  float: left;
+  border-radius: 2px;
+  width: 150px;
+  height: 150px;
+}
+
+.user-info {
+  margin-left: 150px;
+  padding: 0 25px;
+}
+
+.user-fullname {
+  font-size: 30px;
+
+  span {
+    font-size: 18px;
+  }
+}
+
+.user-karma {
+  font-size: 15px;
+  margin: 0 0 10px 0;
+  color: rgba(#000, 0.5);
+}
+
+.user-social {
+  margin-top: 30px;
+
+  a {
+    color: #000;
+  }
+
+  i {
+    font-size: 20px;
+    opacity: 0.5;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+}
+
+.user-talks {
+  h3 {
+    font-size: 18px;
+  }
+}
+
+.user-talks-list {
+  padding: 10px 35px;
+  list-style-type: circle;
+  font-size: 15px;
+}
