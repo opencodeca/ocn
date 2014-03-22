@@ -1,0 +1,20 @@
+defaults: &defaults
+  adapter: postgresql
+  host: 127.0.0.1
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *defaults
+  database: ocn_development
+  username: 
+  password:
+
+test:
+  <<: *defaults
+  database: ocn_test
+  username:
+  password:
+
+production:
+  <<: *defaults
