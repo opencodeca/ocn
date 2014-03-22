@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209135425) do
+ActiveRecord::Schema.define(version: 20140322154204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20131209135425) do
     t.string   "gravatar_id"
     t.integer  "karma",              default: 0
     t.integer  "roles_mask"
+    t.string   "twitter_username"
   end
 
 end
