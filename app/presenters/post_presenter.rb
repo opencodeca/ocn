@@ -31,7 +31,7 @@ class PostPresenter < Bourgeois::Presenter
   end
 
   # Return the formatted description
-  def formatted_description (format = :text)
+  def formatted_description(format = :text)
     case format
     when :markdown
       to_md(description)
