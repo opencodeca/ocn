@@ -1,2 +1,4 @@
 <% content_for :current_section, :popular %>
+<% content_for :page_title, t('.page_title') %>
+
 <%= render partial: 'list', locals: { posts: @posts } %>

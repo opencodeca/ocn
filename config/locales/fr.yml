@@ -1,4 +1,7 @@
 fr:
+  layouts:
+    application:
+      base_title: 'OCN'
   shared:
     nav:
       title: OCN
@@ -23,6 +26,12 @@ fr:
           zero: 'aucun commentaire'
           one: '1 commentaire'
           other: '%{count} commentaires'
+      popular:
+        page_title: 'Publications populaires'
+      newest:
+        page_title: 'Publications récentes'
+      new:
+        page_title: 'Partager une publication'
     comments:
       create:
         notice: "Commentaire ajouté"
@@ -32,6 +41,9 @@ fr:
           zero: '0 point'
           one: '1 point'
           other: '%{count} points'
+    users:
+      index:
+        page_title: 'Liste des membres'
   activerecord:
     models:
       post: 'Article'
