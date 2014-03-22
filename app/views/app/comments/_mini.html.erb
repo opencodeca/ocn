@@ -8,15 +8,20 @@
       , il y a
       <%= link_to time_ago_in_words(comment.created_at), app_comment_path(comment) %>
       (<%= comment.points_count %>)
-      <a href="javascript://" class="reply">reply</a>
+
+      <% if user_signed_in? %>
+        <a href="javascript://" class="reply">reply</a>
+      <% end %>
     </div>
     <div class="body">
       <%= comment.formatted_comment %>
     </div>
 
-    <div class="comment-box">
-      <%= render partial: 'app/comments/form', locals: { comment: comment.comments.build } %>
-    <div>
+    <% if user_signed_in? %>
+      <div class="comment-box">
+        <%= render partial: 'app/comments/form', locals: { comment: comment.comments.build } %>
+      <div>
+    <% end %>
 
     <% threaded && comment.with_comments do %>
       <ul>
