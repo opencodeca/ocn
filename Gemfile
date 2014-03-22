@@ -123,5 +123,8 @@ gem 'devise'
 # Use Pismo to fetch URLs metadata
 gem 'pismo'
 
+# Whitelist-based HTML sanitizer. 
+gem 'sanitize', '~> 2.0.6'
+
 # A fast, safe and extensible Markdown to (X)HTML parser
 gem 'redcarpet', '~> 3.1.1'

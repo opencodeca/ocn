@@ -10,7 +10,7 @@
 
   <hr>
 
-  <%= render partial: 'app/comments/list', locals: { comments: @comments.popular } %>
-
   <%= render partial: 'app/comments/form', locals: { comment: @comment } %>
+
+  <%= render partial: 'app/comments/list', locals: { comments: @comments.popular } %>
 <% end %>

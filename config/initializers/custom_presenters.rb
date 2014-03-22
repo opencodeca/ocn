@@ -6,6 +6,29 @@ class Bourgeois::Presenter
   end
 
   def to_md(text)
-    self.markdown.render(text).html_safe
+    md = markdown.render(text)
+    sanitize(md)
+  end
+
+  CONFIG = {
+    :elements => %w[
+      a b em i ul ol li p pre table tr th td
+    ],
+
+    :attributes => {
+      'a' => ['href']
+    },
+
+    :add_attributes => {
+      'a' => {'rel' => 'nofollow'}
+    },
+
+    :protocols => {
+      'a' => {'href' => ['http', 'https', 'mailto', :relative]}
+    }
+  }
+
+  def sanitize(text)
+    Sanitize.clean(text, CONFIG).html_safe
   end
 end
