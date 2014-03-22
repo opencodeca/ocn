@@ -4,13 +4,13 @@
   <ul class="posts-list">
     <%= render partial: 'mini', locals: { post: @post } %>
     <% post.with_description do %>
-      <p><%= post.formatted_description %></p>
+      <p><%= post.formatted_description(:markdown) %></p>
     <% end %>
   </ul>
 
   <hr>
 
-  <%= render partial: 'app/comments/form', locals: { comment: @comment } %>
-
   <%= render partial: 'app/comments/list', locals: { comments: @comments.popular } %>
+
+  <%= render partial: 'app/comments/form', locals: { comment: @comment } %>
 <% end %>

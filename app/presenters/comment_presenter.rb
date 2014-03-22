@@ -17,4 +17,14 @@ class CommentPresenter < Bourgeois::Presenter
   def points_count
     view.t('.points_count', count: like_emotions_count)
   end
+
+  def formatted_comment (format = :text)
+    case format
+    when :markdown
+      to_md(comment)
+    else
+      view.simple_format(comment)
+    end
+  end
+
 end

@@ -122,3 +122,6 @@ gem 'devise'
 
 # Use Pismo to fetch URLs metadata
 gem 'pismo'
+
+# A fast, safe and extensible Markdown to (X)HTML parser
+gem 'redcarpet', '~> 3.1.1'

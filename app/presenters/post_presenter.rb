@@ -1,5 +1,5 @@
 class PostPresenter < Bourgeois::Presenter
-  helper :with_description, unless: -> { url.present? }
+  helper :with_description, if: -> { description.present? }
   helper :with_url, if: -> { url.present? }
 
   # Return the domain part of the post URL
@@ -31,7 +31,12 @@ class PostPresenter < Bourgeois::Presenter
   end
 
   # Return the formatted description
-  def formatted_description
-    view.simple_format(description)
+  def formatted_description (format = :text)
+    case format
+    when :markdown
+      to_md(description)
+    else
+      view.simple_format(description)
+    end
   end
 end
