@@ -1,14 +1,16 @@
-<div role="form" class="comment-form" <%= ' hidden' if comment.commentable_type == 'Comment' %>>
-  <%= form_for comment, url: app_comments_path do |f| %>
-    <%= render_error_messages(f.object) %>
-    <%= f.hidden_field :commentable_id %>
-    <%= f.hidden_field :commentable_type %>
-    <div class="form-group">
-      <%= f.label :comment, :class => "control-label" %>
-      <%= f.text_area :comment, :class => "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= submit_tag nil, :class => "btn btn-primary"%>
-    </div>
-  <% end %>
-</div>
+<% if user_signed_in? %>
+  <div role="form" class="comment-form" <%= ' hidden' if comment.commentable_type == 'Comment' %>>
+    <%= form_for comment, url: app_comments_path do |f| %>
+      <%= render_error_messages(f.object) %>
+      <%= f.hidden_field :commentable_id %>
+      <%= f.hidden_field :commentable_type %>
+      <div class="form-group">
+        <%= f.label :comment, :class => "control-label" %>
+        <%= f.text_area :comment, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= submit_tag nil, :class => "btn btn-primary"%>
+      </div>
+    <% end %>
+  </div>
+<% end %>
