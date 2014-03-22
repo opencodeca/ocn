@@ -7,13 +7,13 @@ defaults: &defaults
 development:
   <<: *defaults
   database: ocn_development
-  username: 
+  username: root
   password:
 
 test:
   <<: *defaults
   database: ocn_test
-  username:
+  username: root
   password:
 
 production:
