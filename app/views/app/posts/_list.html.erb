@@ -5,5 +5,5 @@
 </ol>
 
 <% unless @posts.last_page? %>
-  <p><%= link_to_next_page(@posts, 'Plus de ragout') %></p>
+  <%= link_to_next_page(@posts, 'Plus de ragout', class: 'next-page') %>
 <% end %>
