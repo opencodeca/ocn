@@ -1,4 +1,6 @@
 <% content_for :current_section, :submit %>
+<% content_for :page_title, t('.page_title') %>
+
 <%= form_for @post, url: app_posts_path do |f| %>
   <%= render_error_messages(f.object) %>
 

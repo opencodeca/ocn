@@ -1,4 +1,5 @@
 <% content_for :current_section, :users %>
+<% content_for :page_title, @user.username %>
 
 <% present @user do |user| %>
   <table>
