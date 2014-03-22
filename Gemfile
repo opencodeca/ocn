@@ -20,6 +20,9 @@ gem 'choices'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# Add prefix to vendor specific css rules
+gem 'autoprefixer-rails'
+
 # Use Micky to extract links
 gem 'micky'
 

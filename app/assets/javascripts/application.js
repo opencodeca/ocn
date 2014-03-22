@@ -5,6 +5,15 @@
 //= require_tree .
 //= require turbolinks
 
+// Turbolinks and progress bar
+$(document).on('page:fetch', function(e){
+  $('.progress_bar').show();
+});
+
+$(document).on('page:change', function(e){
+  $('.progress_bar').hide();
+});
+
 $(document).on('click', '.reply', function(e) {
 	$(this).closest(".comment").find(".comment-form").removeAttr('hidden');
 });
